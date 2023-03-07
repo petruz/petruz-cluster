@@ -1,4 +1,4 @@
-# raelix-cluster-v2
+# petruz-cluster
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 
 ## Overview
