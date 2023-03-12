@@ -7,6 +7,6 @@ configMapGenerator:
 - name: cluster-vars
   namespace: flux-system
   literals:
-  - DOMAIN=petruzhome.it
+  - DOMAIN=petruz.it
   options:
     disableNameSuffixHash: true
