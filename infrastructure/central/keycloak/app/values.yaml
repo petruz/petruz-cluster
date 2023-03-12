@@ -1,0 +1,96 @@
+proxyAddressForwarding: true
+
+metrics:
+  # enabled: true
+  enabled: false
+  service:
+    ports:
+      http: 9990
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "{{ .Values.metrics.service.ports.http }}"
+
+  serviceMonitor:
+    enabled: false
+    # enabled: true
+    namespace: "monitoring"
+
+postgresql:
+  enabled: true
+  auth:
+    username: bn_keycloak
+    database: bitnami_keycloak
+    existingSecret: keycloak-postgresql-auth
+
+extraEnvVars:
+- name: PROXY_ADDRESS_FORWARDING
+  value: "true"
+# - name: KEYCLOAK_ENABLE_STATISTICS
+#   value: "true"
+- name: KEYCLOAK_STATISTICS
+  value: all
+
+service:
+  type: ClusterIP
+
+# nodePorts:
+#   http: "31391"
+#   https: "31390"
+
+ingress:
+  enabled: true
+  ingressClassName: ""
+  pathType: ImplementationSpecific
+  apiVersion: ""
+  # hostname: raelix-clusters.duckdns.org
+  # path: "/auth"
+  hostname: auth.${DOMAIN}
+  path: "/"
+  tls: true
+
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+
+auth:
+  adminUser: petruz-admin
+
+  existingSecret: keycloak-auth
+    # keyMapping:
+    #   admin-password: myPasswordKey
+    #   management-password: myManagementPasswordKey
+
+# extraVolumeMounts:
+#   - name: providers
+#     mountPath: /opt/bitnami/keycloak/providers
+
+# extraVolumes:
+#   - name: providers
+#     emptyDir: {}
+
+# initContainers:
+#   - name: metrics-spi-provider
+#     image: busybox:latest
+#     imagePullPolicy: Always
+#     command:
+#       - sh
+#     args:
+#       - -c
+#       - |
+#         KEYCLOAK_METRICS_SPI_VERSION=2.5.3
+#         wget --no-check-certificate -O /providers/keycloak-metrics-spi-${KEYCLOAK_METRICS_SPI_VERSION}.jar \
+#           https://github.com/aerogear/keycloak-metrics-spi/releases/download/${KEYCLOAK_METRICS_SPI_VERSION}/keycloak-metrics-spi-${KEYCLOAK_METRICS_SPI_VERSION}.jar
+#         chmod +x /providers/keycloak-metrics-spi-${KEYCLOAK_METRICS_SPI_VERSION}.jar
+#         touch /providers/keycloak-metrics-spi-${KEYCLOAK_METRICS_SPI_VERSION}.jar.dodeploy
+#     volumeMounts:
+#       - name: providers
+#         mountPath: /providers
+
+keycloakConfigCli:
+  enabled: true
+  # issue https://github.com/bitnami/charts/issues/14279
+  command:
+  - java
+  - -jar
+  - /opt/bitnami/keycloak-config-cli/keycloak-config-cli.jar
+  existingConfigmap: cli-config

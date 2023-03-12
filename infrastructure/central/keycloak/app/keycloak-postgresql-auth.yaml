@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: keycloak-postgresql-auth
+    namespace: keycloak
+type: Opaque
+data:
+    password: ENC[AES256_GCM,data:lzSWSDbb7Qpfe+A=,iv:Q0QWLOcSar9R6ml3+ELQFbo6fPwJLGZrxso+wrw2qvQ=,tag:+JUBXJ873Zd03AOkJH+zVA==,type:str]
+    postgres-password: ENC[AES256_GCM,data:DJ725JYZ2H1o0Uk=,iv:5UE1msXATQcfzMBnSa2qrEvRh+wpwWTKu8/QjqCrsoE=,tag:5w3X0N87fGHCRqywL4Jocw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a8zks0v22svnqevhtu4y8jynnhkhram08lyaewd45hhy864kjaxqma9fw9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKT0c1L1VRY3JLQ0ZSb0hP
+            bXJPVlhsMUN0b0FxWjRuN1hnQnkzRDZaczAwCllDR09kbkdhbVNJTitOMEkvRytM
+            WHBGdnpEa3dtc3NMMU5CRDdaZzdwRkUKLS0tIFJseEVEdnZWNTRqTzJ5KzJQN3J5
+            TjRTZ25ya0srNVp0bHNLeHF1aUErTEEKo4aBdP7ueNQmWd7zVixpeAakC0STmnYC
+            ZK1mpDR2ukzHRxElysJUQwZ9AsBrkU52kN4l0/J+j4uhguRDF6dLuA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-03-12T13:30:40Z"
+    mac: ENC[AES256_GCM,data:NFvK6Ah13HQp4gp0JIXGqki6+MBNbLh0iHHhogNHqqP/kzFDA0exWhnmDNkMRYcDc3rl4TDy70nGlMbpyWAXzAzZaR52f8YZLdnIl+a35p+pC+YvMg/Ovhl53iJlfkxZMvbIFFqkQsKmAFTdVY6VKy01wnsb13IuepsfVR973do=,iv:WVbmqn5ivC2qAEsI//sI2TBRBMEZKscCuCRXExQshKA=,tag:YkyfIxFoyvfOYhmYMAP7Vg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

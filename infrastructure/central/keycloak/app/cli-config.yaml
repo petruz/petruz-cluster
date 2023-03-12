@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+    realm.json: ENC[AES256_GCM,data:0r/mBGosFXrWh/27VIrs61zcMwM2FHb+zL2awIUxBeXdTiOXLTbHMMGbrIkgs2dB37DLq9TaPMoJUu8O5KWY5I21TimLlHkTurz2pq+yRUpdd75U3wrsbHruyPvatRStYwdIXhkECKX3XiS8a6umDvxAHt0aH3TRRQBdbKfrGXZFWB4mvcKBGjIB5GhI121/rPI9zsHRjOJ0h0lYVHPgYbwO4UOP6EzKmJ1rHdsjvCrYb7LFJXipI9NXng8G/xtciP8f7bVyP90O2XOMgmnmuh6zbDap2qvw7cb5RbEMtg8qPkPkX8tvvv33ViB9H2zeF6qrRA==,iv:tb/bn3gGfLrVkCL0Iseqryxi6eXp39t1XI4VJugQ2mM=,tag:QUqYOXmMGkBVRTWPswXgew==,type:str]
+kind: ConfigMap
+metadata:
+    creationTimestamp: null
+    name: cli-config
+    namespace: keycloak
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a8zks0v22svnqevhtu4y8jynnhkhram08lyaewd45hhy864kjaxqma9fw9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSArUG80eldyMjFBUmxsUE5C
+            QVNXdHUvOWFnUnU2WDhJSWZPL2xPdGlCSFdrCmZKTERRclNUVGI1Qm5UWnZpLzVQ
+            Ti9EUW1XZUM5K1ZhckFrQ2lTSml2RE0KLS0tIE9IQlFrRnJoU2JYa3N0SzFiVlpG
+            NHYyanNydzZ6L2dhMG8ya2FCTWw2eWcKYYkA69EwoHWaESeWOqlndHUqqfYqSJQP
+            IyXocMVWBEk/iqG7wJsKj7AsZBDM3dR/MPw8RvMQulxQ4j7PkKoayA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-03-12T13:28:43Z"
+    mac: ENC[AES256_GCM,data:9wq+UyiM2lHKQdnHhd5ZBB/EqWz9YAqjNvQ15zvzRUY3MxFzHHCsa3dwbD4MLgN8p8V6NNVj33Zpdw4DHe4550TqEpxsFZe4j/4jZi0PIanO5Qn9NbOijpfJfkRUt5Dt/BU89ElkEF849JsrZZXIM01JcVowfF3jORbu199IUiQ=,iv:ynrzZ/UBL/XbCI37qM5UsHfwxS7HGwUJs5fGCjLltKo=,tag:x0taMDiZaDObcjiETGJXlg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
