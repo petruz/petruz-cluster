@@ -1,1 +1,2 @@
-error-log-level: notice
+service:
+  type: NodePort
