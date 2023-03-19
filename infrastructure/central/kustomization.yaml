@@ -4,6 +4,7 @@ resources:
   - ./local-path-provisioner/ks.yaml
   - ./keycloak/ks.yaml
   - ./hosted/ks.yaml
+  - ./ingress-controller/ks.yaml
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system

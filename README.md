@@ -2,7 +2,7 @@
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 
 ## Overview
-This repo is modified using coder on my Kubernetes cluster. 
+This repo is modified using coder on my Kubernetes cluster.
 Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0 (remote) using OID Connect to allow the SSO (single sign-on).
 
 ### Requirements
@@ -21,7 +21,7 @@ Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0
 ### Main installed components
 - cert-manager - used to generate the certificate with let's encrypt using dns01 challenge
 - local-path-provisioner - dynamic local volume provisioner
-- volsync - sync volumes content to my google drive :) 
+- volsync - sync volumes content to my google drive :)
 - external-snapshotter - required but not used by volsync
 - external-dns - configure the DNS records to my pi-hole instance running on a Raspberry-pi
 - Keycloak - indentity and access management solution
@@ -30,7 +30,7 @@ Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0
 - redis - in memory key/value data store
 - weave-dashboard - useful flux dashboard
 - coder - creating and managing developer workspaces
-- paperless - documents management tool with OCR integration 
+- paperless - documents management tool with OCR integration
 - homer - portal to have a single place to access every service
 - home-assistant - home automation and appliance management
 - zigbee2mqtt (2 instances - 2 coordinators)
@@ -55,10 +55,10 @@ kubectl create secret generic sops-age \
 Use this command to initialize and bootstrap flux. Use this command as well to run the flux upgrade
 ```shell
 flux bootstrap github \
---owner=raelix \
---repository=raelix-cluster-v2  \
---branch=main  \
---path=clusters/production \
+--owner=petruz \
+--repository=petruz-cluster  \
+--branch=develop  \
+--path=clusters/central \
 --personal
 ```
 > N.B.: Before running this command to upgrade the flux components remember to upgrade the flux cli
