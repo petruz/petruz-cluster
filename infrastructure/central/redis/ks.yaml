@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/redis/app
+  path: ./infrastructure/central/redis/app
   prune: true
   wait: true
   decryption:

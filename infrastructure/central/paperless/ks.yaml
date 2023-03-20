@@ -12,7 +12,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/paperless/app
+  path: ./infrastructure/central/paperless/app
   prune: true
   wait: true
   decryption:
