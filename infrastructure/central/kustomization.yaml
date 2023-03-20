@@ -6,6 +6,7 @@ resources:
   - ./hosted/ks.yaml
   - ./ingress-controller/ks.yaml
   - ./redis/ks.yaml
+  - ./paperless/ks.yaml
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system
