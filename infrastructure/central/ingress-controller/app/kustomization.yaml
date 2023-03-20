@@ -15,7 +15,7 @@ configurations:
 patches:
   - target:
       kind: HelmRelease
-      name: ingress-controller
+      name: nginx-ingress-controller
     patch: |-
       - op: add
         path: /spec/valuesFrom
