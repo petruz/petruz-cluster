@@ -14,7 +14,7 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 12h
-  values:
-    service:
-      type: NodePort      
+#   values:
+#     service:
+#       type: NodePort      
 
