@@ -3,12 +3,12 @@ kind: Kustomization
 resources:
   - ./local-path-provisioner/ks.yaml
   - ./external-snapshotter/ks.yaml
-  - ./volsync/ks.yaml
+  # - ./volsync/ks.yaml
   - ./keycloak/ks.yaml
   - ./hosted/ks.yaml
   - ./ingress-controller/ks.yaml
   - ./redis/ks.yaml
-  - ./paperless/ks.yaml
+  # - ./paperless/ks.yaml
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system
