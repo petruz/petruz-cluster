@@ -1,5 +1,1 @@
-service:
-  type: NodePort
-  nodePorts:
-    http: "31080"
-    https: "31443"
+hostNetwork: true
