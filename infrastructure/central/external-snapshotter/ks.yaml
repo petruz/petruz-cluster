@@ -10,6 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/component/external-snapshotter
+  path: ./infrastructure/components/external-snapshotter
   prune: true
   wait: true
