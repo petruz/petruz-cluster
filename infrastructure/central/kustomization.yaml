@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ./local-path-provisioner/ks.yaml
   - ./external-snapshotter/ks.yaml
-  # - ./volsync/ks.yaml
+  - ./volsync/ks.yaml
   - ./keycloak/ks.yaml
   - ./hosted/ks.yaml
   - ./ingress-controller/ks.yaml
