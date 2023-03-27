@@ -182,3 +182,10 @@ data:
   EMQX_DASHBOARD__DEFAULT_PASSWORD: BASE64ENCODED_PASSWORD
 ```
 The secret is then encrypted using the ```encrypt_me.sh``` script.
+
+
+##### oauth2-proxy
+Cookie secret:
+```shell
+dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 | tr -d -- '\n' | tr -- '+/' '-_'; echo
+```
