@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/oauth2-proxy/app
+  path: ./infrastructure/central/oauth2-proxy/app
   prune: true
   wait: true
   decryption:
