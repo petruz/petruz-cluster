@@ -1,0 +1,101 @@
+image:
+  repository: ghcr.io/home-assistant/home-assistant
+  tag: 2023.3.1
+
+# podAnnotations:
+#   secret.reloader.stakater.com/reload: home-assistant-secrets
+
+# envFrom:
+#   - secretRef:
+#       name: home-assistant-secrets
+
+dnsPolicy: ClusterFirstWithHostNet
+
+hostNetwork: true
+
+service:
+  main:
+    type: ClusterIP
+    ports:
+      http:
+        port: 8123
+
+ingress:
+  main:
+    enabled: true
+    ingressClassName: "nginx"
+    annotations:
+      external-dns.home.arpa/enabled: "true"
+    hosts:
+      - host: &host "ha.${DOMAIN}"
+        paths:
+          - path: /
+    tls:
+      - hosts:
+          - *host
+
+persistence:
+  config:
+    enabled: true
+    existingClaim: home-assistant-data
+
+  # configuration:
+  #   enabled: true
+  #   type: configMap
+  #   name: home-assistant-configuration
+  #   key: configuration.yaml
+  #   defaultMode: 256
+  #   subPath:
+  #     - path: configuration.yaml
+  #       mountPath: /config/configuration.yaml
+
+probes:
+  liveness:
+    enabled: false
+  readiness:
+    enabled: false
+  startup:
+    enabled: false
+
+resources:
+  requests:
+    cpu: 126m
+    memory: 411M
+  limits:
+    memory: 4417M
+
+addons:
+  codeserver:
+    enabled: true
+    image:
+      repository: codercom/code-server
+      tag: 4.10.0
+    workingDir: "/config"
+    args:
+    - --auth
+    - "none"
+    - --user-data-dir
+    - "/config/.vscode"
+    - --extensions-dir
+    - "/config/.vscode"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+        nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.${DOMAIN}/oauth2/auth"
+        nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.${DOMAIN}/oauth2/start"
+        nginx.ingress.kubernetes.io/auth-response-headers: "x-auth-request-user, x-auth-request-email"
+        ingress.kubernetes.io/force-ssl-redirect: "true"
+        ingress.kubernetes.io/proxy-body-size: "1024m"
+        nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
+      hosts:
+      - host: &host "code.${DOMAIN}"
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - hosts:
+        - *host
+    volumeMounts:
+    - name: config
+      mountPath: /config
