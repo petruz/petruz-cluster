@@ -5,7 +5,7 @@ data:
 kind: Secret
 metadata:
     creationTimestamp: null
-    name: keycloak-auth
+    name: keycloak-postgresql-auth
     namespace: keycloak
 sops:
     kms: []
