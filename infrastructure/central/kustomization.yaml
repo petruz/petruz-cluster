@@ -11,6 +11,7 @@ resources:
   - ./redis/ks.yaml
   - ./portal/ks.yaml
   - ./paperless/ks.yaml
+  - ./home-assistant/ks.yaml
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system
