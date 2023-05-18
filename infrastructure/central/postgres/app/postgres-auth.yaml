@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+    postgres-password: ENC[AES256_GCM,data:QRtPNS1qxzUjPt58,iv:pFtTtPEaGGSs4XJ9ATn1zCIQVInMwpASX05/Ee00/8c=,tag:6choQ0ZSNO+9Wt9r2CX8uQ==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: postgres-auth
+    namespace: data
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a8zks0v22svnqevhtu4y8jynnhkhram08lyaewd45hhy864kjaxqma9fw9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBLdnloaDJGUEpXRmloRzVx
+            KytYSnFwZSt3QzlDYTVjOG5Yc2l5K2o4b2drCjE5QjZra0pnenlDK21NeENLSkh0
+            UVdMZlhjRGJabUNwV0VYc0RsUkNVSFEKLS0tIGxyblVXQnZBSldIazFzdG9Ddm5z
+            dUh1OWFidlBKaTBZK211cFdOYVNNY2MK3rEwkLw9B5chtW+Cnp9ot1ILgtubPWRa
+            meB1y482NDZkf3uZpU1KzrMT2WzmNYlflKJCyvFHX378KAeJCKauDQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-05-18T18:21:14Z"
+    mac: ENC[AES256_GCM,data:JAGK02XoO3p3EHziRJ+p+MdShv5Lw5uleCHLCW1VHUs8xWApiDmBG4z9x1B8UrV+x3lo9NfHtgNPXBcdBIO5a0AqNvdT+DI/hGVpDQzZUshoISmyut4YdFLM9vpVDn7IfrG0Aj9ozgagEZV1dKiHW8EHQDzp32lDLFBhGQQh8+Y=,iv:vca6l7EZo9f65VJ1CE8qxFQH8szuaKzq4tJ0oGbx6QU=,tag:0YQmWvgEDuFW1yocvfRC1A==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
