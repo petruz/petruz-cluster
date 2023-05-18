@@ -17,7 +17,7 @@ global:
       secretKeys:
         adminPasswordKey: "postgres-password"
 
-primary:
-  initdb:
-    scriptsConfigMap: "postgres-initdb"
+# primary:
+#   initdb:
+#     scriptsConfigMap: "postgres-initdb"
     #scriptsSecret: "postgres-initdb"
