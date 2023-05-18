@@ -4,7 +4,7 @@ namespace: data
 resources:
   - ../../../components/postgres
   - ./postgres-auth.yaml
-  - ./postgres-initdb.yaml
+  # - ./postgres-initdb.yaml
 
 configMapGenerator:
   - name: postgres-values
