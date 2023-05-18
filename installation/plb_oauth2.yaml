@@ -1,0 +1,24 @@
+---
+- name: oauth2
+  hosts: all
+  vars:
+    - tmp_oauth2_file: '/tmp/oauth2-proxy.yaml'
+  vars_files:
+    - ./vars/all_vars.yaml
+  tasks:
+    # oauth2-proxy.yaml
+    - name: oauth2-proxy
+      block:
+        - name: Temporary file removal
+          file:
+            path: '{{tmp_oauth2_file}}'
+            state: absent
+        - name: Cookie secret
+          ansible.builtin.shell: "dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 | tr -d -- '\n' | tr -- '+/' '-_'; echo"
+          register: cookie_secret
+        - set_fact:
+            cookie_secret={{cookie_secret.stdout}}
+        - name: Secret creation
+          ansible.builtin.shell: "kubectl create secret generic -n oauth2-proxy oauth2-proxy --from-literal=client-id={{ op_client_id }} --from-literal=client-secret={{ op_client_secret }} --from-literal=cookie-secret={{ cookie_secret }} -o yaml --dry-run=client > {{tmp_oauth2_file}}"
+        - name: encrypt file
+          ansible.builtin.shell: "{{playbook_dir}}/encrypt.sh {{tmp_oauth2_file}}"

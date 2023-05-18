@@ -1,0 +1,55 @@
+---
+- name: keycloak
+  hosts: all
+  vars:
+    - tmp_cli_file: '/tmp/cli-config.yaml'
+    - tmp_auth_file: '/tmp/keycloak-auth.yaml'
+    - tmp_postgres_file: '/tmp/keycloak-postgresql-auth.yaml'
+  vars_files:
+    - ./vars/all_vars.yaml
+  tasks:
+    # cli-config.yaml
+    - name: cli-config
+      block:
+        - name: Temporary file removal
+          file:
+            path: '{{tmp_cli_file}}'
+            state: absent
+        - name: ConfigMap creation
+          ansible.builtin.shell: "kubectl create configmap -n keycloak cli-config --from-file={{playbook_dir}}/templates/realm.json -o yaml --dry-run=client > {{tmp_cli_file}}"
+        - name: customize config file
+          ansible.builtin.replace:
+            path: '{{tmp_cli_file}}'
+            regexp: '{{item.From}}'
+            replace: '{{item.To}}'
+          with_items:
+            - { From: '\$domain', To: "{{ kk_domain_name }}"}
+            - { From: '\$mysecret', To: "{{ kk_secret }}"}
+            - { From: '\$user', To: "{{ kk_username }}"}
+            - { From: '\$password', To: "{{ kk_guest_password }}"}
+            - { From: '\$firstname', To: "{{ kk_firstname }}"}
+            - { From: '\$lastname', To: "{{ kk_lastname }}"}
+        - name: encrypt file
+          ansible.builtin.shell: "{{playbook_dir}}/encrypt.sh {{tmp_cli_file}}"
+    # keycloak-auth
+    - name: keycloak-auth
+      block:
+        - name: Temporary file removal
+          file:
+            path: '{{tmp_auth_file}}'
+            state: absent
+        - name: Secret creation
+          ansible.builtin.shell: "kubectl create secret generic -n keycloak keycloak-auth --from-literal=admin-password={{ kk_admin_password }} --from-literal=management-password={{ kk_management_password }} -o yaml --dry-run=client > {{tmp_auth_file}}"
+        - name: encrypt file
+          ansible.builtin.shell: "{{playbook_dir}}/encrypt.sh {{tmp_auth_file}}"
+    # keycloak-postgresql-auth
+    - name: keycloak-postgresql-auth
+      block:
+        - name: Temporary file removal
+          file:
+            path: '{{tmp_postgres_file}}'
+            state: absent
+        - name: Secret creation
+          ansible.builtin.shell: "kubectl create secret generic -n keycloak keycloak-postgresql-auth --from-literal=postgres-password={{ kk_postgres_password }} --from-literal=password={{ kk_postgres_password }} -o yaml --dry-run=client > {{tmp_postgres_file}}"
+        - name: encrypt file
+          ansible.builtin.shell: "{{playbook_dir}}/encrypt.sh {{tmp_postgres_file}}"

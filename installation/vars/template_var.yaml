@@ -1,0 +1,14 @@
+---
+# keycloak
+kk_domain_name: "mydomain.com"
+kk_secret: mysecret
+kk_username: myname
+kk_admin_password: adminpwd
+kk_management_password: managementpwd
+kk_guest_password: mypassword
+kk_firstname: John
+kk_lastname: Doe
+kk_postgres_password: postgrespwd
+# oauth2-proxy
+op_client_secret: mysecret
+op_client_id: oauth2-proxy

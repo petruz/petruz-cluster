@@ -1,0 +1,393 @@
+{
+    "realm": "master",
+    "clientScopes": [
+        {
+            "name": "groups",
+            "protocol": "openid-connect",
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        }
+    ],
+    "groups": [
+        {
+            "name": "oauth2-proxy"
+        },
+        {
+            "name": "grafana-admin"
+        },
+        {
+            "name": "grafana-dev"
+        },
+        {
+            "name": "ArgoCDAdmins"
+        },
+        {
+            "name": "ArgoCDViewers"
+        },
+        {
+            "name": "admin"
+        },
+        {
+            "name": "guest"
+        }
+    ],
+    "clients": [
+        {
+            "clientId": "oauth2-proxy",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://oauth2-proxy.$domain/oauth2/callback"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone",
+                "roles",
+                "web-origins"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "grafana",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://grafana.$domain/login/generic_oauth"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "argocd",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://argocd.$domain/auth/callback"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "minio",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://minio.$domain/oauth_callback"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "argo",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://argo.$domain/oauth2/*"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "gitops",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://gitops.$domain/oauth2/callback"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "coder",
+            "secret": "$mysecret",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris": [
+                "https://coder.$domain/auth/callback"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                }
+            ]
+        },
+        {
+            "clientId": "rancher",
+            "enabled": true,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "69c74da64f254aaa60f1418c3224624cefd313a1",
+            "redirectUris": [
+                "https://rancher.$domain/verify-auth"
+            ],
+            "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+            ],
+            "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+            ],
+            "protocolMappers": [
+                {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "groups",
+                        "userinfo.token.claim": "true"
+                    }
+                },
+                {
+                    "name": "Client Audience",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "included.client.audience": "rancher",
+                        "id.token.claim": "false",
+                        "access.token.claim": "true"
+                    }
+                }
+            ]
+        }
+    ],
+    "users": [
+        {
+            "username": "$user",
+            "email": "info@$domain",
+            "enabled": true,
+            "firstName": "$firstname",
+            "lastName": "$lastname",
+            "emailVerified": true,
+            "realmRoles": [
+                "admin",
+                "create-realm",
+                "offline_access",
+                "uma_authorization",
+                "default-roles-master"
+            ],
+            "groups": [
+                "grafana-admin",
+                "ArgoCDAdmins",
+                "oauth2-proxy",
+                "admin"
+            ],
+            "attributes": [
+                {
+                    "locale": [
+                        "it"
+                    ]
+                }
+            ]
+        },
+        {
+            "username": "guest",
+            "email": "guest@$domain",
+            "enabled": true,
+            "firstName": "guest",
+            "lastName": "guest",
+            "emailVerified": true,
+            "groups": [
+                "guest"
+            ],
+            "credentials": [
+                {
+                    "type": "password",
+                    "userLabel": "initial",
+                    "value": "$password"
+                }
+            ],
+            "attributes": [
+                {
+                    "locale": [
+                        "it"
+                    ]
+                }
+            ]
+        }
+    ]
+}
