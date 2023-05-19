@@ -21,13 +21,13 @@ postgresql:
   #   username: bn_keycloak
   #   database: bitnami_keycloak
   #   existingSecret: keycloak-postgresql-auth
-  externalDatabase:
-    host: postgres-postgresql
-    port: 5432
-    user: bn_keycloak
-    database: bitnami_keycloak
-    existingSecret: keycloak-postgresql-auth
-    existingSecretPasswordKey: postgres-password
+externalDatabase:
+  host: postgres-postgresql
+  port: 5432
+  user: bn_keycloak
+  database: bitnami_keycloak
+  existingSecret: keycloak-postgresql-auth
+  existingSecretPasswordKey: postgres-password
 
 extraEnvVars:
 - name: PROXY_ADDRESS_FORWARDING
