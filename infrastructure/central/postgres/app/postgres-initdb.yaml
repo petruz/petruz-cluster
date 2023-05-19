@@ -5,7 +5,9 @@ metadata:
     namespace: data-process
 data:
     initdb-script.sql: |
-        create user bn_keycloak with password 'postgres';
-        create database bitnami_keycloak;
-        grant all privileges on database bitnami_keycloak to bn_keycloak;
-        create schema if not exists keycloak authorization bn_keycloak;
+        CREATE DATABASE bitnami_keycloak;
+        \c bitnami_keycloak;
+        CREATE SCHEMA if not exists keycloak;
+        CREATE USER bn_keycloak WITH PASSWORD 'postgres';
+        ALTER USER bn_keycloak SET search_path = keycloak;
+        GRANT ALL PRIVILEGES ON SCHEMA keycloak TO bn_keycloak;
