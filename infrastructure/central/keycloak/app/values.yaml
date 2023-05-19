@@ -22,7 +22,7 @@ postgresql:
   #   database: bitnami_keycloak
   #   existingSecret: keycloak-postgresql-auth
 externalDatabase:
-  host: postgres-postgresql
+  host: postgres-postgresql.data-process.svc.cluster.local
   port: 5432
   user: bn_keycloak
   database: bitnami_keycloak
