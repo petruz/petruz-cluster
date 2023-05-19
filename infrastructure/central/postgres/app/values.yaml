@@ -17,7 +17,9 @@ global:
       secretKeys:
         adminPasswordKey: "postgres-password"
 
-# primary:
+primary:
+  persistence:
+    size: "20Gi"
 #   initdb:
 #     scriptsConfigMap: "postgres-initdb"
     #scriptsSecret: "postgres-initdb"
