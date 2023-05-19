@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
     name: postgres-initdb
-    namespace: data
+    namespace: data-process
 data:
     initdb.sql |
         create user prova;
