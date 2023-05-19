@@ -11,6 +11,9 @@ configMapGenerator:
     files:
       - values.yaml=values.yaml
 
+configurations:
+  - kustomizeconfig.yaml
+
 patches:
   - target:
       kind: HelmRelease
