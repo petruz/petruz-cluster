@@ -23,3 +23,5 @@ primary:
   initdb:
     scriptsConfigMap: "postgres-initdb"
     #scriptsSecret: "postgres-initdb"
+  service:
+    name: "postgresql-svc"
