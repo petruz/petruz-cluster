@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: coder-db-url
+    namespace: hosted
+type: Opaque
+data:
+    url: ENC[AES256_GCM,data:Afei7yuz+hNRqfds3rSbgx8qsuwn2oTMDJAMFMTIr2FF1kVWTzPdlBWR5lMlI6UaqyJi1gz2wF/xbvamMhgmz4YaZxOzonlsZDQWMTJo7pJ+xJNQPQqGOZdxnK7ZtzRFEQhA+ZMcgF06M8lyxd3bJFx3BrhuMpJE1RYNuiMEosPJ/qsyOnKV2w==,iv:vy/7+VFUqAKrfa9VJWiDEkwbXG1mG/YxDkYjIby/rEk=,tag:Rxsuu0zp0MBbqRofMEITog==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1a8zks0v22svnqevhtu4y8jynnhkhram08lyaewd45hhy864kjaxqma9fw9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5djJnYnJPckRGNG9IZFVC
+            NDZiTmpJZ09tcGo3aEgzVThidkxFQmlxRnhnCitaZnd0MFJXS2pJWDJHTG5wTTFr
+            SFg4T1lJQWpZeElqdFN3My9aeEIrcVkKLS0tIE03cnM5VUNKS0pPTk9LVC80ZWFM
+            UHBVeWFuTkFsazhxQmhnRUYrbHdzek0KUBVP1CHABYS73gnDV/ean+AlpjBO2mkE
+            mV30OJjNLPWus14XGNuDTSd8G4ydIHEUN00Cwlhogc3QyFjMJIa53w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-01T12:51:10Z"
+    mac: ENC[AES256_GCM,data:FGVGcPvFuebFJRr0CrrcyNr6GgY+8uywAbsOyg5AAji7nZEJ8RQZL+EqRUx4ek7Py8jKbjS7gWxQUdwNnXAsNWapVjk/DJze2XYbFbx1TmcN+ffyGCy3mBoW5nLd23sqk2f4K5GBnz3uAIz34+9SAjEK4APGEtl4esNgHj41NjY=,iv:p0F9DseznR4WHiq1T5692T2CFRIKq640RF0xWdjiMqg=,tag:AgaiTBNiKT/ZPH+8+EiXEw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
