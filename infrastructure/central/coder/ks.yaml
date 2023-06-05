@@ -7,8 +7,8 @@ spec:
   interval: 1h
   retryInterval: 1m
   timeout: 5m
-  dependsOn:
-  - name: cloudnative-pg-app
+  # dependsOn:
+  # - name: cloudnative-pg-app
   sourceRef:
     kind: GitRepository
     name: flux-system
