@@ -27,7 +27,7 @@ ingress:
     annotations:
       external-dns.home.arpa/enabled: "true"
     hosts:
-      - host: &host "ha.petruz.it"
+      - host: &host "ha.petruz-central.it"
         paths:
           - path: /
     tls:
@@ -82,14 +82,14 @@ addons:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
-        nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.petruz.it/oauth2/auth"
-        nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.petruz.it/oauth2/start"
+        nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.petruz-central.it/oauth2/auth"
+        nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.petruz-central.it/oauth2/start"
         nginx.ingress.kubernetes.io/auth-response-headers: "x-auth-request-user, x-auth-request-email"
         ingress.kubernetes.io/force-ssl-redirect: "true"
         ingress.kubernetes.io/proxy-body-size: "1024m"
         nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
       hosts:
-      - host: &host "code.petruz.it"
+      - host: &host "code.petruz-central.it"
         paths:
         - path: /
           pathType: Prefix

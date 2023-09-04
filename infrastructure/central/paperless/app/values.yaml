@@ -18,7 +18,7 @@ env:
   PAPERLESS_REDIS: redis://redis.redis-system.svc.cluster.local:6379
   PAPERLESS_TASK_WORKERS: 2
   PAPERLESS_TIME_ZONE: "Europe/Rome"
-  PAPERLESS_URL: https://paperless.petruz.it
+  PAPERLESS_URL: https://paperless.petruz-central.it
   USERMAP_GID: 65543
   PAPERLESS_ADMIN_USER:
     valueFrom:
@@ -49,7 +49,7 @@ ingress:
     annotations:
       auth.home.arpa/enabled: "true"
     hosts:
-      - host: &host "paperless.petruz.it"
+      - host: &host "paperless.petruz-central.it"
         paths:
           - path: /
     tls:
