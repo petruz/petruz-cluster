@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/cert-manager/app
+  path: ./infrastructure/central/cert-manager/app
   prune: true
   wait: true
   decryption:
@@ -30,7 +30,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/cert-manager/config
+  path: ./infrastructure/central/cert-manager/config
   prune: true
   wait: true
   decryption:
