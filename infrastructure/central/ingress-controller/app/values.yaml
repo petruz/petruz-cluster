@@ -1,4 +1,6 @@
 hostNetwork: true
+extraArgs:
+  default-ssl-certificate: cert-manager/wildcard-cert
 service:
   externalIPs:
     - 192.168.12.3
