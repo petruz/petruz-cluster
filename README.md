@@ -5,6 +5,11 @@
 This repo is modified using coder on my Kubernetes cluster.
 Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0 (remote) using OID Connect to allow the SSO (single sign-on).
 
+## Steps:
+
+### Ubuntu 22.04 installation
+https://releases.ubuntu.com/
+
 ### Requirements
 - sops
 - pre-commit
