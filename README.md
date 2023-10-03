@@ -7,8 +7,58 @@ Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0
 
 ## Steps:
 
-### Ubuntu 22.04 installation
-https://releases.ubuntu.com/
+### 1) Ubuntu 22.04 installation
+- https://releases.ubuntu.com/
+
+
+### 2) rke2 installation
+- https://docs.rke2.io/
+
+### 3) golang installation
+```
+sudo apt-get update
+sudo apt-get install golang-go
+```
+
+### 4) sops installation
+```
+go get -u go.mozilla.org/sops/v3/cmd/sops
+```
+
+### 5) age installation
+```
+sudo apt install age
+```
+
+### 6) flux installation
+```
+curl -s https://fluxcd.io/install.sh | sudo bash
+```
+
+### 7) pre-commit installation
+```
+pip install pre-commit
+```
+
+### 8) flux installation
+```
+curl -s https://fluxcd.io/install.sh | sudo bash
+```
+
+### 9) helm installation
+```
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+```
+
+### 10) task installation
+```
+sudo snap install task --classic
+```
+
 
 ### Requirements
 - sops
