@@ -5,7 +5,7 @@
 This repo is modified using coder on my Kubernetes cluster.
 Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0 (remote) using OID Connect to allow the SSO (single sign-on).
 
-## Steps:
+# Setting the system:
 
 ### 1) Ubuntu 22.04 installation
 - https://releases.ubuntu.com/
@@ -15,38 +15,38 @@ Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0
 - https://docs.rke2.io/
 
 ### 3) golang installation
-```
+```shell
 sudo apt-get update
 sudo apt-get install golang-go
 ```
 
 ### 4) sops installation
-```
+```shell
 go get -u go.mozilla.org/sops/v3/cmd/sops
 ```
 
 ### 5) age installation
-```
+```shell
 sudo apt install age
 ```
 
 ### 6) flux installation
-```
+```shell
 curl -s https://fluxcd.io/install.sh | sudo bash
 ```
 
 ### 7) pre-commit installation
-```
+```shell
 pip install pre-commit
 ```
 
 ### 8) flux installation
-```
+```shell
 curl -s https://fluxcd.io/install.sh | sudo bash
 ```
 
 ### 9) helm installation
-```
+```shell
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
@@ -55,20 +55,35 @@ sudo apt-get install helm
 ```
 
 ### 10) task installation
-```
+```shell
 sudo snap install task --classic
+
+```
+
+# Initialization:
+
+### flux
+```shell
+flux install
+```
+
+### Secret encryption
+Generate the age pub and private key (only the first time).
+```shell
+age-keygen -o age.agekey
+```
+
+#### Create the secret
+Create the secret that will be use by the kustomize controller
+
+```shell
+cat age.agekey |
+kubectl create secret generic sops-age \
+--namespace=flux-system \
+--from-file=age.agekey=/dev/stdin
 ```
 
 
-### Requirements
-- sops
-- pre-commit
-- flux (cli)
-- kubectl
-
-### Optional
-- task
-- helm
 
 ### Portal overview
 ![Drag Racing](doc/img/portal.png)
@@ -124,21 +139,8 @@ flux bootstrap github \
 ## Developer guide
 This developer guide is useful to remember the important steps. It is still WIP and there are a lot of installed components that are not tracked here yet.
 
-### Secret encryption
-Generate the age pub and private key (only the first time).
-```shell
-age-keygen -o age.agekey
-```
 
-#### Create the secret
-Create the secret that will be use by the kustomize controller
 
-```shell
-cat age.agekey |
-kubectl create secret generic sops-age \
---namespace=flux-system \
---from-file=age.agekey=/dev/stdin
-```
 
 #### Add the decryption section to the kustomize controllers
 ```
