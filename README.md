@@ -83,6 +83,16 @@ kubectl create secret generic sops-age \
 --from-file=age.agekey=/dev/stdin
 ```
 
+#### Encryption rules
+The encryption rule is defined in the root directory of the project in a file called ```.sops.yaml``` which contains the rules and the age public key to use for the encryption:
+```
+creation_rules:
+  - path_regex: .*.yaml
+    encrypted_regex: ^(data|stringData)$
+    age: age1elje5gj3cyqhn44m66xlngczm8dklwmry9803ne69945e256xgequ9xtt6
+```
+#### Encrypt a secret
+To encrypt a secret just run the ```encrypt_me.sh``` passing as first argument the secret yaml file. The script just runs the ```sops -e $1 | tee $1.encrypted``` command which uses the previous defined rule.
 
 
 ### Portal overview
@@ -152,16 +162,7 @@ add the decryption section to the kustomize controllers so flux will take care o
       name: sops-age
 ```
 
-#### Encryption rules
-The encryption rule is defined in the root directory of the project in a file called ```.sops.yaml``` which contains the rules and the age public key to use for the encryption:
-```
-creation_rules:
-  - path_regex: .*.yaml
-    encrypted_regex: ^(data|stringData)$
-    age: age1elje5gj3cyqhn44m66xlngczm8dklwmry9803ne69945e256xgequ9xtt6
-```
-#### Encrypt a secret
-To encrypt a secret just run the ```encrypt_me.sh``` passing as first argument the secret yaml file. The script just runs the ```sops -e $1 | tee $1.encrypted``` command which uses the previous defined rule.
+
 
 ### Apps details
 This section contains the main part related to the application deployment. WIP
