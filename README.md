@@ -74,7 +74,7 @@ age-keygen -o age.agekey
 ```
 
 #### Create the secret
-Create the secret that will be use by the kustomize controller
+Create the secret that will be used by the kustomize controller
 
 ```shell
 cat age.agekey |
