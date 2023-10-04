@@ -4,5 +4,5 @@ data:
   proxy-buffer-size: 16k
 kind: ConfigMap
 metadata:
-  name: nginx-ingress-controller
-  namespace: ingress-controller
+  name: rke2-ingress-nginx-controller
+  namespace: kube-system
