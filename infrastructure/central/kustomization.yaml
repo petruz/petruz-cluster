@@ -5,7 +5,7 @@ resources:
   - ./local-path-provisioner/ks.yaml
   # - ./external-snapshotter/ks.yaml
   # - ./volsync/ks.yaml
-  # - ./postgres/ks.yaml
+  - ./postgres/ks.yaml
   # - ./keycloak/ks.yaml
   # - ./oauth2-proxy/ks.yaml
   # - ./hosted/ks.yaml
