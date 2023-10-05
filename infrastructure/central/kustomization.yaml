@@ -10,7 +10,7 @@ resources:
   # - ./oauth2-proxy/ks.yaml
   # - ./hosted/ks.yaml
   # - ./ingress-controller/ks.yaml
-  # - ./redis/ks.yaml
+  - ./redis/ks.yaml
   # - ./portal/ks.yaml
   # - ./paperless/ks.yaml
   # - ./home-assistant/ks.yaml

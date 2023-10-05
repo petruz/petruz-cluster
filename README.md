@@ -40,12 +40,7 @@ curl -s https://fluxcd.io/install.sh | sudo bash
 pip install pre-commit
 ```
 
-### 8) flux installation
-```shell
-curl -s https://fluxcd.io/install.sh | sudo bash
-```
-
-### 9) helm installation
+### 8) helm installation
 ```shell
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
@@ -54,7 +49,7 @@ sudo apt-get update
 sudo apt-get install helm
 ```
 
-### 10) task installation
+### 9) task installation
 ```shell
 sudo snap install task --classic
 
@@ -65,6 +60,10 @@ sudo snap install task --classic
 ### flux
 ```shell
 flux install
+```
+For accessing the GitHub API, the boostrap command requires a GitHub personal access token (PAT) with administration permissions.
+```
+export GITHUB_TOKEN=<gh-token>
 ```
 
 ### Secret encryption
@@ -93,6 +92,26 @@ creation_rules:
 ```
 #### Encrypt a secret
 To encrypt a secret just run the ```encrypt_me.sh``` passing as first argument the secret yaml file. The script just runs the ```sops -e $1 | tee $1.encrypted``` command which uses the previous defined rule.
+
+# Component Installation
+
+### Cert-manager
+cert-manager adds certificates and certificate issuers as resource types in Kubernetes clusters, and simplifies the process of obtaining, renewing and using those certificates.
+```
+Cloudflare api-token must be set in a secret
+```
+
+### Postgressql
+PostgreSQL is a open source object-relational database.
+Required for: Coder and Keycloak
+```
+postgres admin password must be set in a secret
+```
+
+### Redis
+Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.
+Required for: Paperless
+
 
 
 ### Portal overview
