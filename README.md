@@ -1,4 +1,4 @@
-# petruz-cluster
+# petruz-cluster-v2
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
 
 ## Overview
