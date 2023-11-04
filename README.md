@@ -24,7 +24,14 @@ sudo apt-get install golang-go
 
 ### 4) sops installation
 ```shell
-go get -u go.mozilla.org/sops/v3/cmd/sops
+- Download the binary
+  curl -LO https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64
+
+- Move the binary in to your PATH
+  mv sops-v3.8.1.linux.amd64 /usr/local/bin/sops
+
+- Make the binary executable
+  chmod +x /usr/local/bin/sops
 ```
 
 ### 5) age installation
