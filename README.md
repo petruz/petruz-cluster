@@ -14,6 +14,7 @@ Almost all components (WIP) are authenticated using KeyCloak (locally) and Auth0
 ### 2) rke2 installation
 - https://docs.rke2.io/
 - export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
+- sudo chmod 644 /etc/rancher/rke2/rke2.yaml
 
 ### 3) golang installation
 ```shell
