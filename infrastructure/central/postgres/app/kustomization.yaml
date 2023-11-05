@@ -5,6 +5,7 @@ resources:
   - ./postgres-auth.yaml
   - ./postgres-initdb.yaml
   - ../../../components/postgres
+  - ./db-secrets.yaml
 
 configMapGenerator:
   - name: postgres-values

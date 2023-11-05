@@ -8,9 +8,9 @@ data:
         CREATE DATABASE bitnami_keycloak;
         CREATE DATABASE coder;
         \c bitnami_keycloak;
-        CREATE USER bn_keycloak WITH PASSWORD 'postgres';
+        CREATE USER bn_keycloak WITH PASSWORD '$(bn_keycloak_password)';
         GRANT ALL PRIVILEGES ON SCHEMA public TO bn_keycloak;
         \c coder;
-        CREATE USER coder WITH PASSWORD 'coder';
+        CREATE USER coder WITH PASSWORD '$(coder_password)';
         GRANT ALL PRIVILEGES ON SCHEMA public TO coder;
 
