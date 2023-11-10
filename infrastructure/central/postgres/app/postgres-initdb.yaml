@@ -1,16 +1,27 @@
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
     name: postgres-initdb
     namespace: data-process
 data:
-    initdb-script.sql: |
-        CREATE DATABASE bitnami_keycloak;
-        CREATE DATABASE coder;
-        \c bitnami_keycloak;
-        CREATE USER bn_keycloak WITH PASSWORD '$(bn_keycloak_password)';
-        GRANT ALL PRIVILEGES ON SCHEMA public TO bn_keycloak;
-        \c coder;
-        CREATE USER coder WITH PASSWORD '$(coder_password)';
-        GRANT ALL PRIVILEGES ON SCHEMA public TO coder;
-
+    initdb-script.sql: ENC[AES256_GCM,data:1LH1PBR8RREOLsbnU5yY8VwdtCfFNEBjbqfKPV64cN9EdQsdm1d+8A8Ec6P4ALxaXUnXdt4l7I29wpN1qF5MnwghAa79yMNfnhCzZ/afKJwFtF2Z9dFigHV8ySAgT1GhJZGhhMTc5k6PCvaz6qxx2HRvrg+R36fqRnpC9LvZ5+FPL3+aLpgEF14Uk5R+Ok6TAWh81rYoOwiXEkOWRdZ/VOFyCOnekoofX37nN643rQOokQSmrzMwnFbUeTqEaXh9hSsjxEv8svbjlN/dTdXBZoO0yJVPImXfXNckYTxwDgMVaHlcCmmHFe+NeW9cgoSF5DzHRJb6pPjP6gn7v5BFkJWzQCvDBVZkNkocfskvYo/AVozyI3z8cuudzpmde28MRPa2cDr9B2o0OZlQVL6AIn2nQCo0R3aKQX8CekLO7psTzvfP1WhypaWyW0oBfrZ+74fTZRSlgGLHVBWK+26UbHyJc6Bh0zfeYl4iMMtOc0+Utb/I654OMwaPBE4=,iv:0JIkvpVivO/rMlasUfgRdiqiucbxEkoO72Fia2oD+/s=,tag:rpZocH3HtyGS+LamHiiEBg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1snagr25j2afgqkltfwhkuv453w2rgnlykf7k5rczk0ml03vd4fzq2mga73
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHZG9rcHNrRHNvR21nTE9z
+            b21nbDJYUzhxckZxalNBaEhUakpIYURPZ1RjCjVNcnNSMUV6enUwVEtNZkhvUW9V
+            MjYxVjRUalExUDVZUXpqY2I2dHhhOEEKLS0tIE5vdlY0MGlFaWtQdnp5M1huZnBB
+            R2FmSVdWM1RONlI5cmNKTm12Zy9qbEkKdMqmjExQwC8bht53ukuJykl5AQceaajk
+            gAgZOXZ32Obb3qfhyOOG/79uhnudxrtb3P+KA80TLQ47FaZ7nHGcwQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-11-10T09:36:07Z"
+    mac: ENC[AES256_GCM,data:MK9N2xyBdqGOT99xLIXdRSfK+lGpzabpUkUEsjytr6/wYQlqZPZYMM9d9sMf8mjFOpWJOzJXXgEZBe7DohXQ82VPlztLtTjG29D/jgT42Bhq/x40+kONyDvLjuO8USA1r3ng4kSq6Jfeo5iRMmzs+xfRSJsMn5B0JawwKSOgQlQ=,iv:bfzXglmSzQ4RHgfnMyMxMmRPF/ped+MSZb8gT41l9ao=,tag:mMc8DYW9o4N9CDXdHwYeKQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1

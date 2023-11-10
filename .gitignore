@@ -1,3 +1,4 @@
 /test
 ./test
 installation/vars/all_vars.yaml
+infrastructure/central/postgres/app/initdb-script.sql

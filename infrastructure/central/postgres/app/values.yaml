@@ -21,5 +21,5 @@ primary:
   persistence:
     size: "20Gi"
   initdb:
-    scriptsConfigMap: "postgres-initdb"
-    #scriptsSecret: "postgres-initdb"
+    #scriptsConfigMap: "postgres-initdb"
+    scriptsSecret: "postgres-initdb"

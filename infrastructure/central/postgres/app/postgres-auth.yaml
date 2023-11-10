@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-    postgres-password: ENC[AES256_GCM,data:ijkHgeQW3mggNH3E,iv:MtPlxykb9nf5Mqv30Jenr6d/CvoJeoB5lxQQQkm7rvw=,tag:pBUYtwERV4WMdRqb7TgSVw==,type:str]
+    postgres-password: ENC[AES256_GCM,data:BvINJQQrXJTRbJ5W,iv:KLtJ080fJDGXf7JHDDlUfNTPi3BSpoOGofxQ7WPcOIU=,tag:E2IPRsfLJMllH9FaH6XgBw==,type:str]
 kind: Secret
 metadata:
     creationTimestamp: null
@@ -15,14 +15,15 @@ sops:
         - recipient: age1snagr25j2afgqkltfwhkuv453w2rgnlykf7k5rczk0ml03vd4fzq2mga73
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiaXN6bXllcitNSTRjazZl
-            OGRNRzlDbitUYkQ0VHlkRVZGeStTM3BuUUU0CkIreHgrSTdMS21vQzFKbldVSWJa
-            akZQQlRrMFJzQnRKTHI4VXNvTkdZNTgKLS0tIElRalN4UHRmWEVVbWhQZ0wrTERj
-            VHV4QkdqblhORU93RWdndElRZVh0bVUKr4MsACwrQwG7eg8TNw/Et77UjkznjYVc
-            pif2xWVzvRl3Ufk8fyzVb4tS5P+2BXjNmiO+o3LBPEWZ/Xm/jObLqw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoRVh4SmxITWIyNFlZTlZJ
+            aXhxcTR0bHJPelZDRWxGNjVKK0lFQjY4WEI4CitwZitES0hYZW1mTit3eS81c29P
+            TXdSb0xzSG5ZQW9ZWm9OODlMVWh3NEUKLS0tIENsMjJodTFjeVV4ejVHbVMrOWhu
+            ZWo3aWVFZU9kL2oxQng5dlRkaEw1dk0KykoZ/ZQNn5lsYvYJdGeVAN1S8Vr23Cfy
+            Zl8AUYIwtY7SGVxqZbktmhc0u19Z83f0hLBE3m6b+KsA+jBWqNLctg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-10-05T11:56:54Z"
-    mac: ENC[AES256_GCM,data:e4B2EBeHtRm1IAwkkHtEExfrlttwUqbEziWsQv8+0ri/Tu+hgDkm1FodLIrlJG0bhT30FYtow5FL53jtwJSEV/i9IaYnXGCbjIBcNvsmGPlOPWJqbXjCVo7bUF4IdpjkhehFNM1rt6kuSWjeWY81Ifx0fzFu5PLzmUCGuKqIjfI=,iv:SZ/M00KfgFEeGPbB1icMzN8mFWIMiaJZQFYs/u6vQy8=,tag:ceIh7K34GL65zJoKcINfFw==,type:str]
+    lastmodified: "2023-11-10T09:43:26Z"
+    mac: ENC[AES256_GCM,data:uJS5x0lXMooM+ipkf0BqBT154+2wYBc9t9jwmK3SuVCU7IZqElamMC0hWwP/HTnUfwdh+5bmjS/7ypzWcdhRlrkCZwqGbscOJQx4kD208DCHppUshRapehZBeRVnnMZKtcS/fyhFE3PJhcDUtNjhrTS8FVlryV71EKWn8wdDOAw=,iv:pUh81Sus5ggcFelavI/kuAhRGoX/MBZ1xccMZRJllIA=,tag:SLNPelfXn7qhjZLliOUc5g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
-    version: 3.8.0
+    version: 3.8.1
+
