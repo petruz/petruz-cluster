@@ -8,7 +8,7 @@ resources:
   - ./postgres/ks.yaml
   # - ./keycloak/ks.yaml
   # - ./oauth2-proxy/ks.yaml
-  # - ./hosted/ks.yaml
+  - ./hosted/ks.yaml
   # - ./ingress-controller/ks.yaml
   - ./redis/ks.yaml
   # - ./portal/ks.yaml
