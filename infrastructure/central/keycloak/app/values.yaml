@@ -58,7 +58,7 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 
 auth:
-  adminUser: petruz-admin
+  adminUser: petruz
 
   existingSecret: keycloak-auth
     # keyMapping:

@@ -340,7 +340,7 @@ data:
             ],
             "users": [
             {
-                "username": "petruz-admin",
+                "username": "petruz",
                 "email": "luca@petruz.it",
                 "enabled": true,
                 "firstName": "Luca",
@@ -396,6 +396,5 @@ data:
         }
 kind: ConfigMap
 metadata:
-    creationTimestamp: null
     name: cli-config
     namespace: keycloak
