@@ -6,7 +6,7 @@ resources:
   - ./external-snapshotter/ks.yaml
   - ./volsync/ks.yaml
   - ./postgres/ks.yaml
-  # - ./keycloak/ks.yaml
+  - ./keycloak/ks.yaml
   # - ./oauth2-proxy/ks.yaml
   - ./hosted/ks.yaml
   # - ./ingress-controller/ks.yaml

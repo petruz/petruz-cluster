@@ -1,28 +1,400 @@
 apiVersion: v1
 data:
-    realm.json: ENC[AES256_GCM,data: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,iv:Uecq+ZOLVCJ8XFIae/GG1qHG5rTgYyJsukJgVOdFzno=,tag:9YWrLPa07Z+J/TsL1jmZTQ==,type:str]
+        {
+          "realm": "central",
+          "clientScopes": [
+            {
+              "name": "groups",
+              "protocol": "openid-connect",
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "name": "oauth2-proxy"
+            },
+            {
+              "name": "grafana-admin"
+            },
+            {
+              "name": "grafana-dev"
+            },
+            {
+              "name": "ArgoCDAdmins"
+            },
+            {
+              "name": "ArgoCDViewers"
+            },
+            {
+              "name": "admin"
+            },
+            {
+              "name": "guest"
+            }
+          ],
+          "clients": [
+            {
+              "clientId": "oauth2-proxy",
+              "secret": "dsasda",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://oauth2-proxy.raelix.com/oauth2/callback"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone",
+                "roles",
+                "web-origins"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "grafana",
+              "secret": "dasdas",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://grafana.raelix.com/login/generic_oauth"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "argocd",
+              "secret": "dsadas",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://argocd.raelix.com/auth/callback"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "minio",
+              "secret": "dasdsa",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://minio.raelix.com/oauth_callback"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "argo",
+              "secret": "dsadas",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://argo.raelix.com/oauth2/*"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "gitops",
+              "secret": "dsadsa",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://gitops.raelix.com/oauth2/callback"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "coder",
+              "secret": "dasdas",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "redirectUris": [
+                "https://coder.raelix.com/auth/callback"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "clientId": "rancher",
+              "enabled": true,
+              "clientAuthenticatorType": "client-secret",
+              "secret": "69c74da64f254aaa60f1418c3224624cefd313a1",
+              "redirectUris": [
+                "https://rancher.raelix.com/verify-auth"
+              ],
+              "defaultClientScopes": [
+                "email",
+                "groups",
+                "profile",
+                "roles",
+                "web-origins"
+              ],
+              "optionalClientScopes": [
+                "address",
+                "microprofile-jwt",
+                "offline_access",
+                "phone"
+              ],
+              "protocolMappers": [
+                {
+                  "name": "groups",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-group-membership-mapper",
+                  "config": {
+                    "id.token.claim": "true",
+                    "access.token.claim": "true",
+                    "claim.name": "groups",
+                    "userinfo.token.claim": "true"
+                  }
+                },
+                {
+                  "name": "Client Audience",
+                  "protocol": "openid-connect",
+                  "protocolMapper": "oidc-audience-mapper",
+                  "consentRequired": false,
+                  "config": {
+                      "included.client.audience": "rancher",
+                      "id.token.claim": "false",
+                      "access.token.claim": "true"
+                  }
+                }
+              ]
+            }
+          ],
+          "users": [
+            {
+              "username": "petruz",
+              "email": "luca@petruz.it",
+              "enabled": true,
+              "firstName": "Luca",
+              "lastName": "Petruzziello",
+              "emailVerified": true,
+              "realmRoles": [
+                "admin",
+                "create-realm",
+                "offline_access",
+                "uma_authorization",
+                "default-roles-central"
+              ],
+              "groups": [
+                "grafana-admin",
+                "ArgoCDAdmins",
+                "oauth2-proxy",
+                "admin"
+              ],
+              "attributes": [
+                {
+                  "locale": [
+                    "it"
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "guest",
+              "email": "info@petruz.it",
+              "enabled": true,
+              "firstName": "guest",
+              "lastName": "guest",
+              "emailVerified": true,
+              "groups": [
+                "guest"
+              ],
+              "credentials": [
+                {
+                  "type": "password",
+                  "userLabel": "initial",
+                  "value": "sdasda"
+                }
+              ],
+              "attributes": [
+                {
+                  "locale": [
+                    "it"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
 kind: ConfigMap
 metadata:
     creationTimestamp: null
     name: cli-config
     namespace: keycloak
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1a8zks0v22svnqevhtu4y8jynnhkhram08lyaewd45hhy864kjaxqma9fw9
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5ZnpXa2ZsbkZWaVFBSFpI
-            SVpFQjI0Z0Q4cG1UVjhYbG9GSnpaL2l2SHhjCnhOeFJrRGErM2RaUnR5UVZEbXFq
-            RTcvYVZsK3ZzU3RpT1dqMTFNYXAwZ0UKLS0tIHV0R3VmM1BYNXNYM2FDd3N1UVZT
-            V1FFU0N6NldDZEVtYmJySU1SZFJjNU0K1msMPa0kZmc6yNrz17CR+1m1VXFIXyfK
-            4v5IVZWvWwQ+8YIRmfV0dhCyxpN3vWne0v937E4sDDLROrjgF8aHdw==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-09-14T19:03:20Z"
-    mac: ENC[AES256_GCM,data:Jzvee2+m9PcmcxKsnUw2qUHyNQSkBqSUT/sPz0hRrrOb1674xEm1OWPIOBEaKA2zjnnSotWz6GyQspdlNq/hYAUJeE0wX/Hapiu4/dbz7nXUV1oygnpRqFKqIioGBhLPmdRKpbB0MEcI/c+DnVJq5tfqh52J2NUZTwLKB56K9YU=,iv:1gMGtHdUsCgQ9fxyCD2aDlEn5E+DldRDW01rMkvusIs=,tag:Er0GVMATLKQKfz0D7AaPZA==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.3
