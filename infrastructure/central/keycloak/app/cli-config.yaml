@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   realm.json: |-
         {
-            "realm": "central",
+            "realm": "master",
             "clientScopes": [
             {
                 "name": "groups",
@@ -351,7 +351,7 @@ data:
                 "create-realm",
                 "offline_access",
                 "uma_authorization",
-                "default-roles-central"
+                "default-roles-master"
                 ],
                 "groups": [
                 "grafana-admin",
