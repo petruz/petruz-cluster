@@ -139,7 +139,7 @@ Required for: Paperless
 
 ### Coder
 ```
-coder-db-url: "postgres://coder:password@postgres-postgresql:5432/coder?sslmode=disable"
+coder-db-url: "postgres://coder:password@postgres-postgresql.data-process.svc.cluster.local:5432/coder?sslmode=disable"
 ```
 
 
