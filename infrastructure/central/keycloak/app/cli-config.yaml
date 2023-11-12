@@ -2,397 +2,397 @@ apiVersion: v1
 data:
   realm.json: |-
         {
-          "realm": "central",
-          "clientScopes": [
+            "realm": "central",
+            "clientScopes": [
             {
-              "name": "groups",
-              "protocol": "openid-connect",
-              "protocolMappers": [
+                "name": "groups",
+                "protocol": "openid-connect",
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             }
-          ],
-          "groups": [
+            ],
+            "groups": [
             {
-              "name": "oauth2-proxy"
+                "name": "oauth2-proxy"
             },
             {
-              "name": "grafana-admin"
+                "name": "grafana-admin"
             },
             {
-              "name": "grafana-dev"
+                "name": "grafana-dev"
             },
             {
-              "name": "ArgoCDAdmins"
+                "name": "ArgoCDAdmins"
             },
             {
-              "name": "ArgoCDViewers"
+                "name": "ArgoCDViewers"
             },
             {
-              "name": "admin"
+                "name": "admin"
             },
             {
-              "name": "guest"
+                "name": "guest"
             }
-          ],
-          "clients": [
+            ],
+            "clients": [
             {
-              "clientId": "oauth2-proxy",
-              "secret": "dsasda",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://oauth2-proxy.raelix.com/oauth2/callback"
-              ],
-              "defaultClientScopes": [
+                "clientId": "oauth2-proxy",
+                "secret": "dsasda",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://oauth2-proxy.petruz-central.it/oauth2/callback"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone",
                 "roles",
                 "web-origins"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "grafana",
-              "secret": "dasdas",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://grafana.raelix.com/login/generic_oauth"
-              ],
-              "defaultClientScopes": [
+                "clientId": "grafana",
+                "secret": "dasdas",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://grafana.petruz-central.it/login/generic_oauth"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "argocd",
-              "secret": "dsadas",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://argocd.raelix.com/auth/callback"
-              ],
-              "defaultClientScopes": [
+                "clientId": "argocd",
+                "secret": "dsadas",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://argocd.petruz-central.it/auth/callback"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "minio",
-              "secret": "dasdsa",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://minio.raelix.com/oauth_callback"
-              ],
-              "defaultClientScopes": [
+                "clientId": "minio",
+                "secret": "dasdsa",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://minio.petruz-central.it/oauth_callback"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "argo",
-              "secret": "dsadas",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://argo.raelix.com/oauth2/*"
-              ],
-              "defaultClientScopes": [
+                "clientId": "argo",
+                "secret": "dsadas",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://argo.petruz-central.it/oauth2/*"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "gitops",
-              "secret": "dsadsa",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://gitops.raelix.com/oauth2/callback"
-              ],
-              "defaultClientScopes": [
+                "clientId": "gitops",
+                "secret": "dsadsa",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://gitops.petruz-central.it/oauth2/callback"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "coder",
-              "secret": "dasdas",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "redirectUris": [
-                "https://coder.raelix.com/auth/callback"
-              ],
-              "defaultClientScopes": [
+                "clientId": "coder",
+                "secret": "dasdas",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "redirectUris": [
+                "https://coder.petruz-central.it/auth/callback"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 }
-              ]
+                ]
             },
             {
-              "clientId": "rancher",
-              "enabled": true,
-              "clientAuthenticatorType": "client-secret",
-              "secret": "69c74da64f254aaa60f1418c3224624cefd313a1",
-              "redirectUris": [
-                "https://rancher.raelix.com/verify-auth"
-              ],
-              "defaultClientScopes": [
+                "clientId": "rancher",
+                "enabled": true,
+                "clientAuthenticatorType": "client-secret",
+                "secret": "69c74da64f254aaa60f1418c3224624cefd313a1",
+                "redirectUris": [
+                "https://rancher.petruz-central.it/verify-auth"
+                ],
+                "defaultClientScopes": [
                 "email",
                 "groups",
                 "profile",
                 "roles",
                 "web-origins"
-              ],
-              "optionalClientScopes": [
+                ],
+                "optionalClientScopes": [
                 "address",
                 "microprofile-jwt",
                 "offline_access",
                 "phone"
-              ],
-              "protocolMappers": [
+                ],
+                "protocolMappers": [
                 {
-                  "name": "groups",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-group-membership-mapper",
-                  "config": {
+                    "name": "groups",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-group-membership-mapper",
+                    "config": {
                     "id.token.claim": "true",
                     "access.token.claim": "true",
                     "claim.name": "groups",
                     "userinfo.token.claim": "true"
-                  }
+                    }
                 },
                 {
-                  "name": "Client Audience",
-                  "protocol": "openid-connect",
-                  "protocolMapper": "oidc-audience-mapper",
-                  "consentRequired": false,
-                  "config": {
-                      "included.client.audience": "rancher",
-                      "id.token.claim": "false",
-                      "access.token.claim": "true"
-                  }
+                    "name": "Client Audience",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "included.client.audience": "rancher",
+                        "id.token.claim": "false",
+                        "access.token.claim": "true"
+                    }
                 }
-              ]
+                ]
             }
-          ],
-          "users": [
+            ],
+            "users": [
             {
-              "username": "petruz",
-              "email": "luca@petruz.it",
-              "enabled": true,
-              "firstName": "Luca",
-              "lastName": "Petruzziello",
-              "emailVerified": true,
-              "realmRoles": [
+                "username": "petruz",
+                "email": "luca@petruz.it",
+                "enabled": true,
+                "firstName": "Luca",
+                "lastName": "Petruzziello",
+                "emailVerified": true,
+                "realmRoles": [
                 "admin",
                 "create-realm",
                 "offline_access",
                 "uma_authorization",
                 "default-roles-central"
-              ],
-              "groups": [
+                ],
+                "groups": [
                 "grafana-admin",
                 "ArgoCDAdmins",
                 "oauth2-proxy",
                 "admin"
-              ],
-              "attributes": [
+                ],
+                "attributes": [
                 {
-                  "locale": [
+                    "locale": [
                     "it"
-                  ]
+                    ]
                 }
-              ]
+                ]
             },
             {
-              "username": "guest",
-              "email": "info@petruz.it",
-              "enabled": true,
-              "firstName": "guest",
-              "lastName": "guest",
-              "emailVerified": true,
-              "groups": [
+                "username": "guest",
+                "email": "info@petruz.it",
+                "enabled": true,
+                "firstName": "guest",
+                "lastName": "guest",
+                "emailVerified": true,
+                "groups": [
                 "guest"
-              ],
-              "credentials": [
+                ],
+                "credentials": [
                 {
-                  "type": "password",
-                  "userLabel": "initial",
-                  "value": "sdasda"
+                    "type": "password",
+                    "userLabel": "initial",
+                    "value": "sdasda"
                 }
-              ],
-              "attributes": [
+                ],
+                "attributes": [
                 {
-                  "locale": [
+                    "locale": [
                     "it"
-                  ]
+                    ]
                 }
-              ]
+                ]
             }
-          ]
+            ]
         }
 kind: ConfigMap
 metadata:
