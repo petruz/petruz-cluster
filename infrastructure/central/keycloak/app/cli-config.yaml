@@ -340,7 +340,7 @@ data:
             ],
             "users": [
             {
-                "username": "petruz",
+                "username": "petruz-admin",
                 "email": "luca@petruz.it",
                 "enabled": true,
                 "firstName": "Luca",

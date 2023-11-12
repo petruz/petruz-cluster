@@ -142,6 +142,31 @@ Required for: Paperless
 coder-db-url: "postgres://coder:password@postgres-postgresql.data-process.svc.cluster.local:5432/coder?sslmode=disable"
 ```
 
+### Volsync
+Install rclone and execute a manual configuration using
+```
+rclone config (for gdrive browser authentication is ok)
+```
+get the rclone.conf generated and put in a secret
+
+
+### OAuth2-proxy
+
+Generating a cookie secret:
+```
+dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 | tr -d -- '\n' | tr -- '+/' '-_'; echo
+```
+
+
+### Keycloak
+```
+- keycloak-auth
+    - admin-password: keycloak administrator password
+    - management-password: 
+- keycloak-postgresql-auth
+  - password:
+  - postgres-password: postgres password for user bn_keycloak
+```
 
 
 
