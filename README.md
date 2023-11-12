@@ -120,13 +120,28 @@ Include   Specific zone   petruz-central.it
 ### Postgressql
 PostgreSQL is a open source object-relational database.
 Required for: Coder and Keycloak
+
+Create a secret "postgres-initdb"  based on initdb-script.sql
 ```
-postgres admin password must be set in a secret
+CREATE DATABASE bitnami_keycloak;
+CREATE DATABASE coder;
+\c bitnami_keycloak;
+CREATE USER bn_keycloak WITH PASSWORD 'pwd';
+GRANT ALL PRIVILEGES ON SCHEMA public TO bn_keycloak;
+\c coder;
+CREATE USER coder WITH PASSWORD 'pwd';
+GRANT ALL PRIVILEGES ON SCHEMA public TO coder;
 ```
 
 ### Redis
 Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.
 Required for: Paperless
+
+### Coder
+```
+coder-db-url: "postgres://coder:password@postgres-postgresql:5432/coder?sslmode=disable"
+```
+
 
 
 
