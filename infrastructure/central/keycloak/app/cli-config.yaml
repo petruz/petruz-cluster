@@ -33,12 +33,6 @@ data:
                 "name": "grafana-dev"
             },
             {
-                "name": "ArgoCDAdmins"
-            },
-            {
-                "name": "ArgoCDViewers"
-            },
-            {
                 "name": "admin"
             },
             {
@@ -117,82 +111,12 @@ data:
                 ]
             },
             {
-                "clientId": "argocd",
-                "secret": "dsadas",
-                "enabled": true,
-                "clientAuthenticatorType": "client-secret",
-                "redirectUris": [
-                "https://argocd.petruz-central.it/auth/callback"
-                ],
-                "defaultClientScopes": [
-                "email",
-                "groups",
-                "profile",
-                "roles",
-                "web-origins"
-                ],
-                "optionalClientScopes": [
-                "address",
-                "microprofile-jwt",
-                "offline_access",
-                "phone"
-                ],
-                "protocolMappers": [
-                {
-                    "name": "groups",
-                    "protocol": "openid-connect",
-                    "protocolMapper": "oidc-group-membership-mapper",
-                    "config": {
-                    "id.token.claim": "true",
-                    "access.token.claim": "true",
-                    "claim.name": "groups",
-                    "userinfo.token.claim": "true"
-                    }
-                }
-                ]
-            },
-            {
                 "clientId": "minio",
                 "secret": "dasdsa",
                 "enabled": true,
                 "clientAuthenticatorType": "client-secret",
                 "redirectUris": [
                 "https://minio.petruz-central.it/oauth_callback"
-                ],
-                "defaultClientScopes": [
-                "email",
-                "groups",
-                "profile",
-                "roles",
-                "web-origins"
-                ],
-                "optionalClientScopes": [
-                "address",
-                "microprofile-jwt",
-                "offline_access",
-                "phone"
-                ],
-                "protocolMappers": [
-                {
-                    "name": "groups",
-                    "protocol": "openid-connect",
-                    "protocolMapper": "oidc-group-membership-mapper",
-                    "config": {
-                    "id.token.claim": "true",
-                    "access.token.claim": "true",
-                    "claim.name": "groups",
-                    "userinfo.token.claim": "true"
-                    }
-                }
-                ]
-            },
-            {
-                "clientId": "argo",
-                "secret": "dsadas",
-                "enabled": true,
-                "clientAuthenticatorType": "client-secret",
-                "redirectUris": [
-                "https://argo.petruz-central.it/oauth2/*"
                 ],
                 "defaultClientScopes": [
                 "email",
@@ -340,7 +264,7 @@ data:
             ],
             "users": [
             {
-                "username": "petruz",
+                "username": "petruz-admin",
                 "email": "luca@petruz.it",
                 "enabled": true,
                 "firstName": "Luca",
@@ -355,7 +279,6 @@ data:
                 ],
                 "groups": [
                 "grafana-admin",
-                "ArgoCDAdmins",
                 "oauth2-proxy",
                 "admin"
                 ],
