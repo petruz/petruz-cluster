@@ -4,7 +4,6 @@ data:
     postgres-password: ENC[AES256_GCM,data:cpN0Q2BxXhygRRGI1YcqYA==,iv:hMht8K9U8d8CUfu0K79oBejNXIyzl0jaHRosGsdwPXo=,tag:7y3T2rVpWYFdqjGydiOIzw==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
     name: keycloak-postgresql-auth
     namespace: keycloak
 sops:

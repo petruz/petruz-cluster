@@ -117,7 +117,7 @@ Include   Specific zone   petruz-central.it
 
 ```
 
-### Postgressql
+### Postgresql
 PostgreSQL is a open source object-relational database.
 Required for: Coder and Keycloak
 
@@ -136,6 +136,18 @@ GRANT ALL PRIVILEGES ON SCHEMA public TO coder;
 ### Redis
 Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.
 Required for: Paperless
+
+
+### Keycloak
+```
+- keycloak-auth
+    - admin-password: keycloak administrator password
+    - management-password: 
+- keycloak-postgresql-auth
+  - password:
+  - postgres-password: postgres password for user bn_keycloak
+```
+
 
 ### Coder
 ```
@@ -157,16 +169,6 @@ Generating a cookie secret:
 dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 | tr -d -- '\n' | tr -- '+/' '-_'; echo
 ```
 
-
-### Keycloak
-```
-- keycloak-auth
-    - admin-password: keycloak administrator password
-    - management-password: 
-- keycloak-postgresql-auth
-  - password:
-  - postgres-password: postgres password for user bn_keycloak
-```
 
 
 
