@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: mqtt-users
+data:
+    users.json: ENC[AES256_GCM,data:0kO4lqOz3wNfgNOGinDdqMRsVzGpfPR6cY5JgQE5MWpdKJY3sEyO4wDI/Yg7SAoV+odkoU7/wa6W6Z32QdX2zqNvFzqVQ6scOKdOM9TGyaqsRQ4cwD92D+OcwDIgsZYXYaQHIcEx59QeWGaAB15LcA==,iv:+cofescSmz71zhammKJfhQsAsZ+WlMPPa2K+HNFbk+U=,tag:DcYOQokWHwrEID3bSJm7ZA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1snagr25j2afgqkltfwhkuv453w2rgnlykf7k5rczk0ml03vd4fzq2mga73
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4MFdLc2RUYTBFWjVZUVN1
+            azZXUkk1SUw2T2E2eitLWEduY2ZMSjZ0bVZzCmVvbzl0T0pMdWovcmpHZ245SW9o
+            VGF5QzBlczhMQWJnNjIxNVdkT2lUUXMKLS0tIGM5cnNqbGhaUkM4TGIvM3JhMjNU
+            VjVjOStNbDJWdlZGR2ErSGMvYU41UEkKUL3U7CsbLoImtzWCQ0oF4z5woRwTgusx
+            hsZ22RarOKITLotJxQm7Abw/B34gSu9rkey/IyknGhXSQH0jOC+qNw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-11-23T12:50:07Z"
+    mac: ENC[AES256_GCM,data:9C405cUDvvs3k5rRFL1q90FCUNq5ZJQikTa5zQsvTESjr7B8nUMmVFxgRRfS67n2eLBwwXuI+6AhoQOMEf2JFv+5qdn/3/aZ4/lsCmDaZrrhE0zTG1CRaPQe1aprNR32wg3oJfTySiiCoRf3n1pkYEXpmklBNW+s//xYpqwIs+0=,iv:T8yqwnEw7pC4apxogla6axnw5Jwy+EMW+8rZihydMWA=,tag:r6JuDkcEVmGeQE4fIsNgTg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1

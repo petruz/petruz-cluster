@@ -1,0 +1,6 @@
+// this is just an example
+{
+    "user_id": "user",
+    "password": "password",
+    "is_superuser": true
+  }
