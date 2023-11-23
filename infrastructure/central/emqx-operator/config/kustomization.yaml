@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: message
 resources:
   - ./namespace.yaml
-  # - ./mqtt-users.yaml
+  - ./mqtt-users.yaml
   - ./dashboard-auth.yaml
-  # - ./cluster.yaml
+  - ./cluster.yaml
   - ./ingress.yaml

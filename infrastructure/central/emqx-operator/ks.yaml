@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/emqx-operator/app
+  path: ./infrastructure/central/emqx-operator/app
   prune: true
   wait: true
   decryption:
@@ -30,7 +30,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/emqx-operator/config
+  path: ./infrastructure/central/emqx-operator/config
   prune: true
   wait: true
   decryption:
