@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: mqtt.petruz-central.com
+  - host: mqtt.petruz-central.it
     http:
       paths:
       - backend:
@@ -17,4 +17,4 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - 'mqtt.petruz-central.com'
+    - 'mqtt.petruz-central.it'

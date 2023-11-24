@@ -17,6 +17,7 @@ resources:
   - ./home-assistant/ks.yaml
   # - ./coder/ks.yaml
   - ./emqx-operator/ks.yaml
+  - ./zigbee2mqtt-switches/ks.yaml  
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system
