@@ -1,6 +1,6 @@
 image:
   repository: docker.io/koenkk/zigbee2mqtt
-  tag: 1.30.2
+  tag: 1.32.2
 
 env:
   ZIGBEE2MQTT_DATA: /data
@@ -48,8 +48,9 @@ persistence:
   usb:
     enabled: true
     type: hostPath
-    hostPath: /dev/serial/by-id
-    hostPathType: Directory
+    hostPath: /dev/ttyUSB0
+    #hostPath: /dev/serial/by-id
+    # hostPathType: Directory
   # configuration:
   #   enabled: true
   #   type: configMap
