@@ -14,6 +14,11 @@ env:
 securityContext:
   privileged: true
 
+volumeMounts:
+  - name: zigbee2mqtt-switches-config
+    mountPath: /app/configuration.yaml
+    subPath: configuration.yaml  
+
 service:
   main:
     ports:
