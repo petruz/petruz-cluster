@@ -17,7 +17,12 @@ securityContext:
 volumeMounts:
   - name: zigbee2mqtt-switches-config
     mountPath: /app/configuration.yaml
-    subPath: configuration.yaml  
+    subPath: configuration.yaml
+
+volumes:
+  - name: zigbee2mqtt-switches-config
+    configMap:
+      name: zigbee2mqtt-switches-config
 
 service:
   main:
