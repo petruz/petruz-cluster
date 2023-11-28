@@ -14,16 +14,6 @@ env:
 securityContext:
   privileged: true
 
-# volumeMounts:
-#   - name: zigbee2mqtt-switches-config
-#     mountPath: /app/configuration.yaml
-#     subPath: configuration.yaml
-
-# volumes:
-#   - name: zigbee2mqtt-switches-config
-#     configMap:
-#       name: zigbee2mqtt-switches-config
-
 service:
   main:
     ports:
@@ -59,16 +49,7 @@ persistence:
     enabled: true
     type: hostPath
     hostPath: /dev/serial/by-id
-    hostPathType: Directory
-  configuration:
-    enabled: true
-    type: configMap
-    name: zigbee2mqtt-switches-config
-    key: configuration.yaml
-    defaultMode: 256
-    subPath:
-      - path: configuration.yaml
-        mountPath: /config/configuration.yaml    
+    hostPathType: Directory  
 
   # configuration:
   #   enabled: true
