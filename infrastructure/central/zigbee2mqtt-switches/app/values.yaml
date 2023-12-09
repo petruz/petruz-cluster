@@ -50,15 +50,6 @@ persistence:
     type: hostPath
     hostPath: /dev/serial/by-id
     hostPathType: Directory
-  configuration:
-    enabled: true
-    type: configMap
-    name: zigbee2mqtt-switches-config
-    key: configuration.yaml
-    defaultMode: 256
-    subPath:
-      - path: configuration.yaml
-        mountPath: /config/configuration.yaml       
 
   # configuration:
   #   enabled: true
