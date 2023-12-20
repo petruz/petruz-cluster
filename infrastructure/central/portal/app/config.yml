@@ -11,7 +11,7 @@ header: true # Set to false to hide the header
 #   search: "Shift"
 footer: false
 
-columns: "3" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+columns: "2" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
 connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example).
                         # You should set it to true when using an authentication proxy, it also reloads the page when a redirection is detected when checking connectivity.
 
@@ -37,9 +37,9 @@ theme: default # 'default' or one of the themes available in 'src/assets/themes'
 # if you want to change only some of the colors, feel free to remove all unused key.
 colors:
   light:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
+    highlight-primary: "#b95c50"
+    highlight-secondary: "#de847b"
+    highlight-hover: "#deb3ad"
     background: "#f5f5f5"
     card-background: "#ffffff"
     text: "#363636"
@@ -47,13 +47,13 @@ colors:
     text-title: "#424242"
     text-subtitle: "#424242"
     card-shadow: rgba(0, 0, 0, 0.1)
-    link: "#3273dc"
+    link: "#3b0404"
     link-hover: "#363636"
     # background-image: "assets/your/light/bg.png"
   dark:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
+    highlight-primary: "#b95c50"
+    highlight-secondary: "#de847b"
+    highlight-hover: "#deb3ad"
     background: "#131313"
     card-background: "#2b2b2b"
     text: "#eaeaea"
@@ -61,7 +61,7 @@ colors:
     text-title: "#fafafa"
     text-subtitle: "#f5f5f5"
     card-shadow: rgba(0, 0, 0, 0.4)
-    link: "#3273dc"
+    link: "#3b0404"
     link-hover: "#ffdd57"
     # background-image: "assets/your/dark/bg.png"
 
@@ -138,13 +138,6 @@ services:
         keywords: "home mqtt zigbee self-hosted"
         tagstyle: "is-success"
         url: "https://z2m-switches.petruz-central.it"
-      - name: "ZigBee2MQTT"
-        logo: "https://www.zigbee2mqtt.io/logo.png"
-        subtitle: "Sensors"
-        tag: ""
-        keywords: "home mqtt zigbee self-hosted"
-        tagstyle: "is-success"
-        url: "https://z2m-sensors.petruz-central.it"
   - name: "Apps"
     icon: "fas fa-cubes"
     # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
@@ -158,24 +151,24 @@ services:
         keywords: "paperless doc self-hosted"
         url: "https://paperless.petruz-central.it"
         target: "_blank"
-  - name: "Automation"
-    icon: "fas fa-code-fork"
-    # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
-    # logo: "path/to/logo"
-    items:
-      - name: "FluxCD Dashboard"
-        # icon: "fas fa-leaf"
-        logo: "https://avatars.githubusercontent.com/u/25348533?s=200&v=4"
-        subtitle: "Weave Work"
-        tag: ""
-        keywords: "automation flux"
-        url: "https://gitops.petruz-central.it"
-        target: "_blank"
-      - name: "Coder"
-        # logo: "https://avatars.githubusercontent.com/u/99562962?s=200&v=4"
-        icon: "fas fa-terminal"
-        subtitle: "Developer Workspaces"
-        tag: ""
-        keywords: "coder workspace self-hosted"
-        url: "https://coder.petruz-central.it"
-        target: "_blank"
+  # - name: "Automation"
+  #   icon: "fas fa-code-fork"
+  #   # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
+  #   # logo: "path/to/logo"
+  #   items:
+  #     - name: "FluxCD Dashboard"
+  #       # icon: "fas fa-leaf"
+  #       logo: "https://avatars.githubusercontent.com/u/25348533?s=200&v=4"
+  #       subtitle: "Weave Work"
+  #       tag: ""
+  #       keywords: "automation flux"
+  #       url: "https://gitops.petruz-central.it"
+  #       target: "_blank"
+  #     - name: "Coder"
+  #       # logo: "https://avatars.githubusercontent.com/u/99562962?s=200&v=4"
+  #       icon: "fas fa-terminal"
+  #       subtitle: "Developer Workspaces"
+  #       tag: ""
+  #       keywords: "coder workspace self-hosted"
+  #       url: "https://coder.petruz-central.it"
+  #       target: "_blank"
