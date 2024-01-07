@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: auth-generic-oauth-secret
+    namespace: observability
+data:
+    client_id: ENC[AES256_GCM,data:pp24LC1JZngF8sL3IDHTqg==,iv:rtoM0SGVkeAX3+vseharbm7zqlqvIo0TNxir4/g4UVg=,tag:tDKCjIV6gBC3XYChye/Xug==,type:str]
+    client_secret: ENC[AES256_GCM,data:zFpb0lxzOcaxHV2V,iv:b8Q8LjGDpLRPie7lPIjbchnhqGuvQSTans64VDaP9Qg=,tag:EvlwAjE6/YMMeAOfbE/P1g==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1snagr25j2afgqkltfwhkuv453w2rgnlykf7k5rczk0ml03vd4fzq2mga73
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtUXBQWUpTdGxRZU1NdUxW
+            MGhTMVZQNkdlRjVkSEVDTVRTdk1wTTNKZG1NCkFpQ3lsRXd1dzJRRHp0RG5PajNS
+            Nk1KOW81TzB0dWtHdEEvMHhoMXJWaTAKLS0tIFRxQ1pxNlZRYnVaZWdsSWhxN083
+            UVIrNlhRMFdhcXF1OHRRNDZIbGtNUTAK6uJpfZhgdolSWB+9RInv7FJU+9LpxZpv
+            Lsx0kA3UhbRenYylRUPOZOo4AtCev6CFPbEUCjxwjEceTvDFZ5F5+g==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-01-02T16:42:30Z"
+    mac: ENC[AES256_GCM,data:K33JKVLyqcPI2+sAMZhqx7rzxoDO1iNNJSqs4YeFzNXtGs6fXsDiD0iINCipSTo/7NkAnpjGk/4/ormbob4WEQn37+y4OtR+zRxTLbiRHCELZMQ2LHQCnSI8dOBEwv6/e+jA6s/pFGrYFYKW7Wgj6hKRMNGoOV7et2v1bGoMVbc=,iv:4ev/FjkVkEtvBMq0J2GOvRUsedUpqYptKBmOhUCtomk=,tag:FNb6yhQVB7hzz19B8EyoaA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
