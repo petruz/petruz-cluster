@@ -11,6 +11,8 @@ resources:
   - ./hosted/ks.yaml
   # - ./ingress-controller/ks.yaml
   - ./redis/ks.yaml
+  - ./kube-prometheus-stack/ks.yaml
+  - ./prometheus-json-exporter/ks.yaml  
   - ./portal/ks.yaml
   - ./paperless/ks.yaml
   - ./home-automation/ks.yaml  
