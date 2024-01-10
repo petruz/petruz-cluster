@@ -25,9 +25,9 @@ grafana:
     auth.basic:
       enabled: false
     auth:
-      disable_login_form: false
+      disable_login_form: true
     auth.generic_oauth:
-      enabled: false
+      enabled: true
       client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
       client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
       name: Keycloak
