@@ -127,6 +127,10 @@ prometheus:
     path: /
 
   prometheusSpec:
+    ## How long to retain metrics
+    retention: 20d
+    ## Maximum size of metrics
+    retentionSize: ""
 
     additionalScrapeConfigsSecret:
       enabled: true
