@@ -4,6 +4,5 @@ metadata:
   name: coder
   namespace: flux-system
 spec:
-  interval: 30m
+  interval: 24h
   url: https://helm.coder.com/v2
-  timeout: 3m
