@@ -18,25 +18,25 @@ grafana:
     mountPath: /etc/secrets/auth_generic_oauth
     readOnly: true
 
-  grafana.ini:
-    server:
-      root_url: https://grafana.petruz-central.it
+#  grafana.ini:
+#    server:
+#      root_url: https://grafana.petruz-central.it
       # serve_from_sub_path: "true"
-    auth.basic:
-      enabled: false
-    auth:
-      disable_login_form: true
-    auth.generic_oauth:
-      enabled: true
-      client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
-      client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
-      name: Keycloak
-      allow_sign_up: true
-      scopes: openid,profile,email,groups
-      auth_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/auth
-      token_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/token
-      api_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/userinfo
-      role_attribute_path: contains(groups[*], 'grafana-admin') && 'Admin' || contains(groups[*], 'grafana-dev') && 'Editor' || 'Viewer'
+#    auth.basic:
+#      enabled: false
+#    auth:
+#      disable_login_form: true
+#    auth.generic_oauth:
+#      enabled: true
+#      client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
+#      client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
+#      name: Keycloak
+#      allow_sign_up: true
+#      scopes: openid,profile,email,groups
+#      auth_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/auth
+#      token_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/token
+#      api_url: https://auth.petruz-central.it/realms/master/protocol/openid-connect/userinfo
+#      role_attribute_path: contains(groups[*], 'grafana-admin') && 'Admin' || contains(groups[*], 'grafana-dev') && 'Editor' || 'Viewer'
 
   ingress:
     enabled: true
