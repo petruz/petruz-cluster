@@ -1,6 +1,10 @@
 grafana:
   enabled: true
-  adminPassword: prom-operator
+  admin:
+    existingSecret: grafana-secret
+    userKey: admin-user
+    passwordKey: admin-password
+  # adminPassword: prom-operator
   persistence:
     type: pvc
     storageClassName: local-path
