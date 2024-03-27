@@ -12,5 +12,3 @@ resources:
   - ./oauth2-proxy.yaml
   - ./emqx.yaml
   - ./cloudnative-pg.yaml
-  - ./coder.yaml
-  - ./argo.yaml
