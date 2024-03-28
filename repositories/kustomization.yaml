@@ -4,7 +4,7 @@ resources:
   - ./jetstack.yaml
   - ./bitnami.yaml
   - ./external-snapshotter.yaml
-  - ./external-dns.yaml
+  # - ./external-dns.yaml
   - ./prometheus-community.yaml
   - ./backube.yaml
   - ./local-path-provisioner.yaml
