@@ -48,7 +48,7 @@ persistence:
   usb:
     enabled: true
     type: hostPath
-    hostPath: /dev/serial/by-id
+    hostPath: /dev/ttyACM0
     hostPathType: Directory
 
   # configuration:
