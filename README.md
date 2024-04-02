@@ -171,6 +171,22 @@ dd if=/dev/urandom bs=32 count=1 2>/dev/null | base64 | tr -d -- '\n' | tr -- '+
 encrypt with echo -n <secret> | base64
 ```
 
+### Home Assistant
+Put in configuration.yaml:
+
+```
+...
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.42.0.0/24
+```
+
+ip get using:
+```
+kubectl get pod -n kube-system -o wide | grep rke2-coredns
+```
+
 
 ### emqx-operator (MQTT Broker)
 
