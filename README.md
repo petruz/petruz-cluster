@@ -187,10 +187,42 @@ ip get using:
 kubectl get pod -n kube-system -o wide | grep rke2-coredns
 ```
 
+mqtt configuration
+mqtt broker: emqx-listeners.message.svc.cluster.local
+
+
 
 ### emqx-operator (MQTT Broker)
 
+```
+k get pvc -n home-automation z2m-switches-data
+sudo find / -name [pvc]
+```
 
+in configuration.yaml:
+
+```
+homeassistant: false
+frontend:
+  port: 8099
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://emqx-listeners.message.svc.cluster.local
+  user: ******
+  password: ******
+serial:
+  port: /dev/ttyACM0
+  adapter: ezsp
+advanced:
+  log_level: debug
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+device_options:
+  legacy: false
+```
+
+Without adapter and port it doesn't work      
 
 
 ### Portal overview
