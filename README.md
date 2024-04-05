@@ -180,6 +180,9 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.42.0.0/24
+
+# metrics
+prometheus:
 ```
 
 ip get using:
