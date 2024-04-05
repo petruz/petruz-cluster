@@ -225,7 +225,21 @@ device_options:
   legacy: false
 ```
 
-Without adapter and port it doesn't work      
+Without adapter and port it doesn't work 
+
+### Kube prometheus stack
+```
+- job_name: 'homeassistant'
+  metrics_path: /api/prometheus
+  scrape_interval: 60s
+  honor_labels: true
+  static_configs:
+    - targets: ['home-assistant.home-automation.svc.cluster.local:8123']
+  scheme: http
+  bearer_token: "***"
+```
+Where bearer_token is the Long-lived access tokens.
+You need to connect to the HA and under user -> profile you can generate a new token
 
 
 ### Portal overview

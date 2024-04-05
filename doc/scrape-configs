@@ -1,27 +1,8 @@
-apiVersion: v1
-data:
-    scrape-configs: ENC[AES256_GCM,data:J0iSfFZGOOoh4dhijPK1ahF7yo4WgHHF87HAF7/oRKRpvao08VxiN6/hPh390TSNmdxt0W5xr2cjny6xNRnzHIIR8jRgfQ7x4l/rdyuUJgCcpPjfQ/3+n+hCcusQZo/lsc3iEdXFJPDBgyogoK5jgc4UsxOUzC9Jg/5wI0Z0ZO/xpGDDIjYtAl4IRVhFMKXtuZYxjIiADRqjhAPagJOMYtPKQuaLQgz8O7pENIscl5ZAr5eNlAQnmKP0cxOP9B9+OOmkbJHb7hfmsbiaov3GAyErtHnHnb6HWOpAFavfoojuZEMU83OoKrPHdqGOb115EIBJDh+TjCtDxqvWjSNn4NPtibVKoBfQTjESnkZ703vAXcHx8LDi1tEOTO8zABcNadu7gCPythc65K7TTqdMXKQll4dwtbg7d0pznmiys+yVxZsMtuOhgT1Obf7NoV95y1fqyHD4z/vL/9Td0JcWUkp3EC/UeLFpEG1+IW3a7Oc93GfwSkD73grE2pw/l5Il89JPUcpPKaXKRrCaoM5HrMbiMaVTfnS+oTcsoaxctfg3bdGKsjGXF9etfTzHYx5qLYLIuoCa63fep8pWCWr1o4wpuK77/IPruvQ4NHisnPYDw80lLNjnd94lXTu7L+0e0IyT6PySqaLVfF17M34s9vMGcTYUehAVHcUnc3yW5iE+1D3Zy+tVc/v42OI+tJqmUzqrUgMV8hCqYiE+kyyv5K+FcW6NBp23AxjOWg==,iv:wqqtTvzz5N3Z01XsDw2KVV/g1mXm0ffnuL7Xe57DunM=,tag:uI7+OzIDlDgQ9C1VF2m5ng==,type:str]
-kind: Secret
-metadata:
-    name: scrape-config
-    namespace: observability
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1snagr25j2afgqkltfwhkuv453w2rgnlykf7k5rczk0ml03vd4fzq2mga73
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMbzAwL3pwNUQrNWhpYjdh
-            TmdCdlRTN29yQ2cvTlg4TkpsbWlvYzYrQUdnCjY1a2JmTGNQcDBCK0dZUDFmZ1FX
-            Z2E4NmJxL25HaXBMMk9IemVROU5kTVUKLS0tIE1rUDJmUjRMTHpkZGpJcFN5aEdq
-            cWhTVU10WHJuRnltd29sdyt2WjhPMFEK3L5kzvvL0be5oOjpBjO/dnwkpzdbIDUD
-            wfplESjCORxG/dvb7BG5Z1rQ1ry9hQXF9CE2fhQiiinjtN1cs8xJ0Q==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-01-07T10:57:39Z"
-    mac: ENC[AES256_GCM,data:4VR3hlKsDy0HYNmv+gVOVJrrHbz2vDaLVRbeEaCnVmXfKZk63G9sZzPVcEcSKBrQGop5Ek576d5YuatQ9A18vdgfzlXgXy9xQ87sGyCFEmyQ62VpoaKJ59CvHF2ycSaQOnhQXuWXnTS5lOc3tgb6gIvjGZXthZvksyUwS24PqBE=,iv:kFRoETCYBM+hwX3NAWG68Y2TaZ+MgMt3IWOOJ6sWhy0=,tag:Sis9mxnLWNjtbjF7T5vROQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.8.1
+- job_name: 'homeassistant'
+  metrics_path: /api/prometheus
+  scrape_interval: 60s
+  honor_labels: true
+  static_configs:
+    - targets: ['home-assistant.home-automation.svc.cluster.local:8123']
+  scheme: http
+  bearer_token: "***"
