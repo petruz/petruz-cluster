@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+emqx-operatoremqx-operatorapiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: emqx-operator
@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: emqx-operator
-      version: 2.1.1
+      version: 2.2.18
       interval: 30m
       sourceRef:
         kind: HelmRepository
