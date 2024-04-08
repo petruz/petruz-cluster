@@ -48,15 +48,15 @@ spec:
         - name: mqtt-users
           secret:
             secretName: mqtt-users
-  bootstrapConfig: |
-    authentication {
-      backend = "built_in_database"
-      mechanism = "password_based"
-      password_hash_algorithm {name = "sha256", salt_position = "suffix"}
-      user_id_type = "username"
-    }
-    node {
-      cookie = emqxsecretcookie
-      data_dir = "data"
-      etc_dir = "etc"
-    }
+  # bootstrapConfig: |
+  #   authentication {
+  #     backend = "built_in_database"
+  #     mechanism = "password_based"
+  #     password_hash_algorithm {name = "sha256", salt_position = "suffix"}
+  #     user_id_type = "username"
+  #   }
+  #   node {
+  #     cookie = emqxsecretcookie
+  #     data_dir = "data"
+  #     etc_dir = "etc"
+  #   }
