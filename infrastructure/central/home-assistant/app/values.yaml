@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/home-assistant/home-assistant
-  tag: 2024.4.1
+  tag: 2024.7.2
 
 # podAnnotations:
 #   secret.reloader.stakater.com/reload: home-assistant-secrets
@@ -69,7 +69,7 @@ addons:
     enabled: true
     image:
       repository: codercom/code-server
-      tag: 4.10.0
+      tag: 4.91.0
     workingDir: "/config"
     args:
     - --auth
