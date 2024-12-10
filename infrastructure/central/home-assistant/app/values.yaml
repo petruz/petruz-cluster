@@ -89,7 +89,7 @@ addons:
         ingress.kubernetes.io/proxy-body-size: "1024m"
         nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
       hosts:
-      - host: &host "code.petruz-central.it"
+      - host: &host  "code.petruz-central.it"
         paths:
         - path: /
           pathType: Prefix
