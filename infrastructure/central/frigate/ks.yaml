@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/production/frigate/app
+  path: ./infrastructure/central/frigate/app
   prune: true
   wait: true
   decryption:
