@@ -4,6 +4,7 @@ resources:
   - ./jetstack.yaml
   - ./bitnami.yaml
   - ./external-snapshotter.yaml
+  - ./blakeblackshear.yaml
   # - ./external-dns.yaml
   - ./prometheus-community.yaml
   - ./backube.yaml
