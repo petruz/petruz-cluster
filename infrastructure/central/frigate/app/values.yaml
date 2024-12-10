@@ -9,15 +9,15 @@ ingress:
   # annotations: {}
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.raelix.com/oauth2/auth"
-    nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.raelix.com/oauth2/start"
+    nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.petruz-central.it/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.petruz-central.it/oauth2/start"
     nginx.ingress.kubernetes.io/auth-response-headers: "x-auth-request-user, x-auth-request-email"
     ingress.kubernetes.io/force-ssl-redirect: "true"
     ingress.kubernetes.io/proxy-body-size: "1024m"
     nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
 
   hosts:
-    - host: &host "frigate.raelix.com"
+    - host: &host "frigate.petruz-central.it"
       paths:
         - '/'
 
@@ -35,112 +35,112 @@ config: |
       user: '{FRIGATE_MQTT_USER}'
       password: '{FRIGATE_MQTT_PASSWORD}'
 
-    go2rtc:
-      streams:
-        ingresso:
-          - "rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.1.197:554/stream1"
-          - "ffmpeg:ingresso#audio=opus"
-        soggiorno:
-          - "rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.1.151:554/stream1"
-          - "ffmpeg:soggiorno#audio=opus"
+    # go2rtc:
+    #   streams:
+    #     ingresso:
+    #       - "rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.1.197:554/stream1"
+    #       - "ffmpeg:ingresso#audio=opus"
+    #     soggiorno:
+    #       - "rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.1.151:554/stream1"
+    #       - "ffmpeg:soggiorno#audio=opus"
 
-    cameras:
-      garage:
-        objects:
-          track:
-          - person
-          - car
-          filters:
-            person:
-              # min_area: 2000
-              # max_area: 100000
-              min_score: 0.7
-              threshold: 0.8
-        ffmpeg:
-          inputs:
-            - path: rtsp://192.168.1.100:44629/831eac2b834598cc
-              roles:
-                - detect
-                - record
-        detect:
-          width: 1280
-          height: 720
-          fps: 5
-      arlo:
-        objects:
-          track:
-          - person
-          filters:
-            person:
-              # min_area: 2000
-              # max_area: 100000
-              min_score: 0.7
-              threshold: 0.8
-        ffmpeg:
-          inputs:
-            - path: rtsp://192.168.1.100:42925/2ca30f4376dda965
-              roles:
-                - detect
-                - record
-        detect:
-          width: 1280
-          height: 720
-          fps: 5
-      ingresso:
-        zones:
-          entrata:
-            coordinates: 1100,258,1150,720,603,720,620,289
-        objects:
-          track:
-          - person
-          filters:
-            person:
-              # min_area: 2000
-              # max_area: 100000
-              min_score: 0.7
-              threshold: 0.8
-        ffmpeg:
-          inputs:
-            - path: rtsp://127.0.0.1:8554/ingresso
-              roles:
-                - detect
-                - record
-        detect:
-          width: 1280
-          height: 720
-          fps: 5
+    # cameras:
+    #   garage:
+    #     objects:
+    #       track:
+    #       - person
+    #       - car
+    #       filters:
+    #         person:
+    #           # min_area: 2000
+    #           # max_area: 100000
+    #           min_score: 0.7
+    #           threshold: 0.8
+    #     ffmpeg:
+    #       inputs:
+    #         - path: rtsp://192.168.1.100:44629/831eac2b834598cc
+    #           roles:
+    #             - detect
+    #             - record
+    #     detect:
+    #       width: 1280
+    #       height: 720
+    #       fps: 5
+    #   arlo:
+    #     objects:
+    #       track:
+    #       - person
+    #       filters:
+    #         person:
+    #           # min_area: 2000
+    #           # max_area: 100000
+    #           min_score: 0.7
+    #           threshold: 0.8
+    #     ffmpeg:
+    #       inputs:
+    #         - path: rtsp://192.168.1.100:42925/2ca30f4376dda965
+    #           roles:
+    #             - detect
+    #             - record
+    #     detect:
+    #       width: 1280
+    #       height: 720
+    #       fps: 5
+    #   ingresso:
+    #     zones:
+    #       entrata:
+    #         coordinates: 1100,258,1150,720,603,720,620,289
+    #     objects:
+    #       track:
+    #       - person
+    #       filters:
+    #         person:
+    #           # min_area: 2000
+    #           # max_area: 100000
+    #           min_score: 0.7
+    #           threshold: 0.8
+    #     ffmpeg:
+    #       inputs:
+    #         - path: rtsp://127.0.0.1:8554/ingresso
+    #           roles:
+    #             - detect
+    #             - record
+    #     detect:
+    #       width: 1280
+    #       height: 720
+    #       fps: 5
 
-      soggiorno:
-        motion:
-          mask:
-            - 1280,0,1280,146,564,104,0,158,0,0
-        zones:
-          divano:
-            coordinates: 0,279,0,571,123,619,343,627,557,598,567,436,570,278,571,161,114,163
-          cucina:
-            coordinates: 1008,166,1087,129,1214,159,1280,172,1280,519,1192,668,1203,720,1026,467,1076,337,1019,253,1010,219
-          tavolo:
-            coordinates: 796,355,996,596,1044,483,1097,477,1146,337,1022,154,828,126
-        objects:
-          track:
-          - person
-          # - laptop
-          # - book
-          filters:
-            person:
-              min_area: 300
-              max_area: 100000
-              threshold: 0.6
-        ffmpeg:
-          inputs:
-            - path: rtsp://127.0.0.1:8554/soggiorno
-              roles:
-                - detect
-                # - record
-        detect:
-          # width: 1280
-          # height: 720
-          fps: 5
+    #   soggiorno:
+    #     motion:
+    #       mask:
+    #         - 1280,0,1280,146,564,104,0,158,0,0
+    #     zones:
+    #       divano:
+    #         coordinates: 0,279,0,571,123,619,343,627,557,598,567,436,570,278,571,161,114,163
+    #       cucina:
+    #         coordinates: 1008,166,1087,129,1214,159,1280,172,1280,519,1192,668,1203,720,1026,467,1076,337,1019,253,1010,219
+    #       tavolo:
+    #         coordinates: 796,355,996,596,1044,483,1097,477,1146,337,1022,154,828,126
+    #     objects:
+    #       track:
+    #       - person
+    #       # - laptop
+    #       # - book
+    #       filters:
+    #         person:
+    #           min_area: 300
+    #           max_area: 100000
+    #           threshold: 0.6
+    #     ffmpeg:
+    #       inputs:
+    #         - path: rtsp://127.0.0.1:8554/soggiorno
+    #           roles:
+    #             - detect
+    #             # - record
+    #     detect:
+    #       # width: 1280
+    #       # height: 720
+    #       fps: 5
 
       # arlo:
       #   zones:
@@ -164,9 +164,9 @@ config: |
       #   detect:
       #     fps: 5
 
-    objects:
-      track:
-      - person
+    # objects:
+    #   track:
+    #   - person
 
       # filters:
       #   person:
