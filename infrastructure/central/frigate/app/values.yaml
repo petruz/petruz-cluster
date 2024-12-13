@@ -30,7 +30,7 @@ envFromSecrets:
 
 config: |
     mqtt:
-      enabled: True
+      enabled: false
       host: emqx-listeners.message.svc.cluster.local
       user: '{FRIGATE_MQTT_USER}'
       password: '{FRIGATE_MQTT_PASSWORD}'
