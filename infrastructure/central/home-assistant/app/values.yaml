@@ -52,26 +52,7 @@ resources:
     cpu: 126m
     memory: 411M
   limits:
-    memory: 4417M
-
-initContainers:
-  - name: copy-configuration
-    image: busybox:latest
-    command: ["sh", "-c"]
-    args:
-      - |
-        cp /templates/configuration.yaml /config/configuration.yaml;
-        exit 0;
-    volumeMounts:
-      - name: config
-        mountPath: /config
-      - name: configuration-template
-        mountPath: /templates
-        
-volumes:
-  - name: configuration-template
-    configMap:
-      name: home-assistant-configuration            
+    memory: 4417M         
 
 addons:
   codeserver:

@@ -4,7 +4,6 @@ namespace: home-automation
 resources:
   - ./pvc.yaml
   - ./replication-source.yaml
-    # - ./configmap-hass-config.yaml
   - ../../../components/home-assistant
 
 configMapGenerator:
