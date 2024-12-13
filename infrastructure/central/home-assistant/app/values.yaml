@@ -39,15 +39,15 @@ persistence:
     enabled: true
     existingClaim: home-assistant-data
 
-  configuration:
-    enabled: true
-    type: configMap
-    name: home-assistant-configuration
-    key: configuration.yaml
-    defaultMode: 256
-    subPath:
-      - path: configuration.yaml
-        mountPath: /config/configuration.yaml
+  # configuration:
+  #   enabled: true
+  #   type: configMap
+  #   name: home-assistant-configuration
+  #   key: configuration.yaml
+  #   defaultMode: 256
+  #   subPath:
+  #     - path: configuration.yaml
+  #       mountPath: /config/configuration.yaml
 
 probes:
   liveness:
