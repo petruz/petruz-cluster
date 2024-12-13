@@ -48,7 +48,6 @@ persistence:
   #   subPath:
   #     - path: configuration.yaml
   #       mountPath: /config/configuration.yaml
-
 probes:
   liveness:
     enabled: false
