@@ -29,9 +29,9 @@ envFromSecrets:
   - frigate-rstp-credentials
 
 persistence:
-  data:
+  config:
     enabled: true
-    existingClaim: frigate-data
+    existingClaim: frigate-config
     mountPath: /config
 
 config: |
