@@ -205,7 +205,7 @@ sudo find / -name [pvc]
 in configuration.yaml:
 
 ```
-homeassistant: false
+homeassistant: true
 frontend:
   port: 8099
 mqtt:
