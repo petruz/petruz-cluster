@@ -28,10 +28,10 @@ ingress:
 envFromSecrets:
   - frigate-rstp-credentials
 
-persistence:
-  config:
-    enabled: true
-    existingClaim: frigate-config
+# persistence:
+#   config:
+#     enabled: true
+#     existingClaim: frigate-config
 
 config: |
     mqtt:

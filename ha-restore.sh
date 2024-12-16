@@ -19,7 +19,7 @@ home_assistant_restore() {
     LOCAL_RESTORE_DIR="/tmp/home-assistant-restore"
     REMOTE_BACKUP_DIR="gdrive:/home-assistant-backups"
 
-    sudo mkdir -p $LOCAL_RESTORE_DIR
+    mkdir -p $LOCAL_RESTORE_DIR
 
     echo "Fetching Home Assistant backup from Google Drive..."
     rclone sync $REMOTE_BACKUP_DIR $LOCAL_RESTORE_DIR --progress
@@ -43,7 +43,7 @@ home_assistant_restore() {
     fi
 
     echo "Home Assistant restore completed successfully."
-    sudo rm -rf $LOCAL_RESTORE_DIR
+    rm -rf $LOCAL_RESTORE_DIR
 }
 
 zigbee2mqtt_restore() {
