@@ -19,8 +19,7 @@ service:
     ports:
       http:
         port: 8123
-    controller:
-      enabled: true
+    controller: "nginx"
 
 ingress:
   main:
