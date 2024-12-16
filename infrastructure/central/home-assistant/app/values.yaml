@@ -15,15 +15,14 @@ hostNetwork: true
 
 service:
   main:
+    controller: main
     type: ClusterIP
     ports:
       http:
         port: 8123
-    controller: "main"
 
 ingress:
   main:
-    enabled: true
     annotations:
       external-dns.home.arpa/enabled: "true"
     hosts:
