@@ -45,7 +45,6 @@ service:
 ingress:
   main:
     enabled: true
-    ingressClassName: "nginx"
     annotations:
       auth.home.arpa/enabled: "true"
     hosts:
@@ -61,28 +60,28 @@ persistence:
     enabled: true
     retain: true
     size: 2Gi
-    type: pvc
+    type: persistentVolumeClaim
     accessMode: ReadWriteOnce
     mountPath: /usr/src/paperless/data
   media:
     enabled: true
     retain: true
     size: 2Gi
-    type: pvc
+    type: persistentVolumeClaim
     accessMode: ReadWriteOnce
     mountPath: /usr/src/paperless/media
   consume:
     enabled: true
     retain: true
     size: 2Gi
-    type: pvc
+    type: persistentVolumeClaim
     accessMode: ReadWriteOnce
     mountPath: /usr/src/paperless/consume
   export:
     enabled: true
     retain: true
     size: 2Gi
-    type: pvc
+    type: persistentVolumeClaim
     accessMode: ReadWriteOnce
     mountPath: /usr/src/paperless/export
 
