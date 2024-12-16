@@ -15,7 +15,6 @@ hostNetwork: true
 
 service:
   main:
-    controller: main
     type: ClusterIP
     ports:
       http:
@@ -23,17 +22,14 @@ service:
 
 ingress:
   main:
+    enabled: true
+    ingressClassName: "nginx"
     annotations:
       external-dns.home.arpa/enabled: "true"
     hosts:
       - host: &host "ha.petruz-central.it"
         paths:
           - path: /
-            pathType: Prefix
-            service:
-              identifier: main
-              # name: home-assistant
-              port: 8123
     tls:
       - hosts:
           - *host
