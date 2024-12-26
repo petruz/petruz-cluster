@@ -73,6 +73,22 @@ grafana:
         editable: true
         options:
           path: /tmp/dashboards/opensea-dashboard
+      - name: 'pannelli'
+        orgId: 1
+        folder: 'home-assistant-dashboards'
+        type: file
+        disableDeletion: true
+        editable: true
+        options:
+          path: /tmp/dashboards/pannelli
+      - name: 'speed-test'
+        orgId: 1
+        folder: 'home-assistant-dashboards'
+        type: file
+        disableDeletion: true
+        editable: true
+        options:
+          path: /tmp/dashboards/speed-test            
   #     - name: 'logging-dashboard'
   #       orgId: 1
   #       folder: 'Home Assistant Dashboard'
