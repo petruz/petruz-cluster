@@ -20,6 +20,15 @@ configMapGenerator:
         k8s-sidecar-target-directory: "/tmp/dashboards/opensea-dashboard"
     files:
       - dashboards/opensea-dashboard.json
+  - name: pannelli
+    namespace: monitoring
+    options:
+      labels:
+        grafana_dashboard: "2"
+      annotations:
+        k8s-sidecar-target-directory: "/tmp/dashboards/home-assistant-dashboards"
+    files:
+      - dashboards/pannelli.json      
 
 
 configurations:
