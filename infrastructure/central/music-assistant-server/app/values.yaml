@@ -27,4 +27,5 @@ ingress:
 persistence:
   config:
     enabled: true
+    mountPath: /data
     existingClaim: music-assistant-server-data
