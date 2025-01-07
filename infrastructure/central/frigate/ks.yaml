@@ -4,6 +4,8 @@ metadata:
   name: frigate-app
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: home-assistant-app
   interval: 1h
   retryInterval: 1m
   timeout: 5m
