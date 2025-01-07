@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: music-assistant-server
+  namespace: home-automation
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: music-assistant-server
+      version: 0.1.5
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: lmatfy
+        namespace: flux-system

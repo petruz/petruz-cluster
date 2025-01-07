@@ -20,6 +20,7 @@ resources:
   - ./home-assistant/ks.yaml
   - ./emqx-operator/ks.yaml
   - ./zigbee2mqtt-switches/ks.yaml
+  - ./music-server-assistant/ks.yaml
 configMapGenerator:
 - name: cluster-vars
   namespace: flux-system

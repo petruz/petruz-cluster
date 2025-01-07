@@ -1,0 +1,24 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+namespace: home-automation
+resources:
+  - ../../../components/music-assistant-server
+
+configMapGenerator:
+  - name: music-assistant-server-values
+    files:
+      - values.yaml=values.yaml
+configurations:
+  - kustomizeconfig.yaml
+
+patches:
+  - target:
+      kind: HelmRelease
+      name: coder
+    patch: |-
+      - op: add
+        path: /spec/valuesFrom
+        value:
+        - kind: ConfigMap
+          name: coder-values
+          valuesKey: values.yaml
