@@ -14,11 +14,11 @@ configurations:
 patches:
   - target:
       kind: HelmRelease
-      name: coder
+      name: music-assistant-server
     patch: |-
       - op: add
         path: /spec/valuesFrom
         value:
         - kind: ConfigMap
-          name: coder-values
+          name: music-assistant-server-values
           valuesKey: values.yaml
