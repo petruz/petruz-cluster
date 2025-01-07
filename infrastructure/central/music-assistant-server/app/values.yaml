@@ -23,3 +23,8 @@ ingress:
     tls:
       - hosts:
           - *host
+
+persistence:
+  config:
+    enabled: true
+    existingClaim: music-assistant-server-data
