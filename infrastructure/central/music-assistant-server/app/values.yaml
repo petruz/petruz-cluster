@@ -1,4 +1,6 @@
 
+hostNetwork: true
+
 service:
   main:
     ports:
