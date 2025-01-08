@@ -29,7 +29,7 @@ persistence:
     enabled: true
     mountPath: /data
     existingClaim: music-assistant-server-data
-  additionalVolume:
-    enabled: true
-    mountPath: /media
-    existingClaim: synology-nfs-pvc
+  # additionalVolume:
+  #   enabled: true
+  #   mountPath: /media
+  #   existingClaim: synology-nfs-pvc
