@@ -7,6 +7,7 @@ show_help() {
     echo "  --help            Show this help message and exit"
     echo "  -ha               Execute only the Home Assistant backup"
     echo "  -zb               Execute only the Zigbee2mqtt backup"
+    echo "  -ma               Execute only the Music Assistant backup"
     echo "  (no options)      Execute both Home Assistant and Zigbee2mqtt backups"
 }
 
@@ -36,6 +37,35 @@ home_assistant_backup() {
 
     echo "Home Assistant backup completed successfully."
     rm -rf $LOCAL_BACKUP_DIR
+}
+
+music_assistant_backup() {
+    echo "Starting Music Assistant backup..."
+    NAMESPACE="home-automation"
+    POD_NAME=$(kubectl get pods -n $NAMESPACE -l app.kubernetes.io/name=music-assistant-server -o jsonpath="{.items[0].metadata.name}")
+    VOLUME_PATH="/data"
+    LOCAL_BACKUP_DIR="/tmp/music-assistant-backup"
+    REMOTE_BACKUP_DIR="gdrive:/music-assistant-backups"
+
+    mkdir -p $LOCAL_BACKUP_DIR
+
+    kubectl cp $NAMESPACE/$POD_NAME:$VOLUME_PATH $LOCAL_BACKUP_DIR
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to copy volume from Music Assistant pod."
+        exit 1
+    fi
+
+    echo "Uploading Music Assistant backup to Google Drive..."
+    rclone sync $LOCAL_BACKUP_DIR $REMOTE_BACKUP_DIR --progress
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to upload Music Assistant backup to Google Drive."
+        exit 1
+    fi
+
+    echo "Music Assistant backup completed successfully."
+    rm -rf $LOCAL_BACKUP_DIR
+
+
 }
 
 # Zigbee2mqtt backup function
@@ -82,6 +112,10 @@ case "$1" in
         home_assistant_backup
         exit 0
         ;;
+    -ma)
+        music_assistant_backup
+        exit 0
+        ;;
     -zb)
         zigbee2mqtt_backup
         exit 0
@@ -89,6 +123,7 @@ case "$1" in
     "")
         home_assistant_backup
         zigbee2mqtt_backup
+	music_assistant_backup
         exit 0
         ;;
     *)
